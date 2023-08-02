@@ -34,17 +34,31 @@ It typically takes 2 to 4 bytes of memory, depending on the implementation.
 using namespace std;
 int main()
 {
-    int myNum = 5;               // Integer (whole number without decimals)
-    float myFloatNum = 5.99;     // Floating point number (with decimals)
-    double myDoubleNum = 9.98;   // Floating point number (with decimals)
-    char myLetter = 'D';         // Character
-    bool myBoolean = true;       // Boolean (true or false)
-    string myText = "Hello";     // String (text)
+    int myNum = 5;             // Integer (whole number without decimals)
+    float myFloatNum = 5.99;   // Floating point number (with decimals)
+    double myDoubleNum = 9.98; // Floating point number (with decimals)
+    char myLetter = 'D';       // Character
+    bool myBoolean = true;     // Boolean (true or false)
+    string myText = "Hello";   // String (text)
     cout << "int: " << myNum << "\n";
     cout << "float: " << myFloatNum << "\n";
     cout << "double: " << myDoubleNum << "\n";
     cout << "char: " << myLetter << "\n";
     cout << "bool: " << myBoolean << "\n";
     cout << "string: " << myText << "\n";
+    return 0;
+}
+
+//____________
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    double myDoubleNum = 5.12345678987;
+    float myFloatNum = 5.12345678987;
+    cout << setprecision(9) << fixed;
+    cout << "double: " << myDoubleNum << "\n";
+    cout << "float: " << myFloatNum << "\n";
     return 0;
 }
