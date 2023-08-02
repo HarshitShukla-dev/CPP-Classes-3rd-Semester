@@ -1,12 +1,11 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 int main()
 {
-    double myDoubleNum = 5.12345678987;
-    float myFloatNum = 5.12345678987;
-    cout << setprecision(5);
-    cout << "double: " << myDoubleNum << "\n";
-    cout << "float: " << myFloatNum << "\n";
+    // The sizeof operator returns the number of bytes (storage size) of its operand.
+    cout << "Size of char: " << sizeof(char) << " byte" << endl;
+    cout << "Size of int: " << sizeof(int) << " bytes" << endl;
+    cout << "Size of float: " << sizeof(float) << " bytes" << endl;
+    cout << "Size of double: " << sizeof(double) << " bytes" << endl;
     return 0;
 }
