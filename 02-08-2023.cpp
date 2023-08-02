@@ -85,9 +85,11 @@ int main()
 using namespace std;
 int main()
 {
-    cout << INT_MIN << endl;
-    cout << INT_MAX << endl;
-    cout << CHAR_MIN << endl;
-    cout << CHAR_MAX << endl;
+    // The limits header file defines macros that allow you to use these values conveniently in your programs.
+    // The macros defined in this header, limits the values of various variable types like char, int and long.
+    cout << INT_MIN << endl;  // minimum value of int
+    cout << INT_MAX << endl;  // maximum value of int
+    cout << CHAR_MIN << endl; // minimum value of char
+    cout << CHAR_MAX << endl; // maximum value of char
     return 0;
 }
