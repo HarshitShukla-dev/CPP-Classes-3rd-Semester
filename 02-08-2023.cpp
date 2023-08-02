@@ -58,7 +58,7 @@ int main()
 {
     double myDoubleNum = 5.12345678987;
     float myFloatNum = 5.12345678987;
-    cout << setprecision(5);
+    cout << setprecision(5); //using setprecision() to set the number of decimal places 
     cout << "double: " << myDoubleNum << "\n";
     cout << "float: " << myFloatNum << "\n";
     return 0;
