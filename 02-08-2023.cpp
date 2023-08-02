@@ -58,10 +58,21 @@ int main()
 {
     double myDoubleNum = 5.12345678987;
     float myFloatNum = 5.12345678987;
-    cout << setprecision(5); //using setprecision() to set the number of decimal places 
+    cout << setprecision(5); // using setprecision() to set the number of decimal places
     cout << "double: " << myDoubleNum << "\n";
     cout << "float: " << myFloatNum << "\n";
     return 0;
 }
 
 //____________
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Size of char: " << sizeof(char) << " byte" << endl;
+    cout << "Size of int: " << sizeof(int) << " bytes" << endl;
+    cout << "Size of float: " << sizeof(float) << " bytes" << endl;
+    cout << "Size of double: " << sizeof(double) << " bytes" << endl;
+    return 0;
+}
