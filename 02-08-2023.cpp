@@ -1,6 +1,5 @@
 // Different data types
 /*
-Integer:
 
 int data type is used to store whole numbers. It takes 4 bytes of memory.
 The range of an int is from -2,147,483,648 to 2,147,483,647.
@@ -86,7 +85,6 @@ using namespace std;
 int main()
 {
     // The limits header file defines macros that allow you to use these values conveniently in your programs.
-    // The macros defined in this header, limits the values of various variable types like char, int and long.
     cout << INT_MIN << endl;  // minimum value of int
     cout << INT_MAX << endl;  // maximum value of int
     cout << CHAR_MIN << endl; // minimum value of char
