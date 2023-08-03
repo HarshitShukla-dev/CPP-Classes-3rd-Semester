@@ -4,8 +4,8 @@
 operators are used to perform operations on variables and values.
 operators are of these types:
 1. Arithmetic Operators : +, -, *, /, %, ++, --
-2. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
-3. Comparison Operators / Relational Operators : ==, !=, >, <, >=, <=
+2. Comparison Operators / Relational Operators : ==, !=, >, <, >=, <=
+3. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
 4. Logical Operators : &&, ||, !
 5. Bitwise Operators : &, |, ^, ~, <<, >>
 6. Misc Operators : sizeof(), condition ? X : Y, , .*, ->*, ., ->, (type), new, delete
