@@ -15,6 +15,9 @@ We also categorise operators into 3 types:
 3. Ternary Operators : condition ? X : Y
 */
 
+
+//____________ 
+
 // 1. Arithmetic Operators
 #include <iostream>
 using namespace std;
@@ -40,6 +43,8 @@ int main()
     return 0;
 }
 
+//____________
+
 /*
 Increment and Decrement Operators:
 
@@ -49,6 +54,8 @@ It first increments or decrements the value of a and then returns the value of a
 a++ or a-- is called post-increment or post-decrement
 It first returns the value of a and then increments or decrements the value of a.
 */
+
+//____________
 
 #include <iostream>
 using namespace std;
@@ -65,3 +72,5 @@ int main()
     cout << "Now a = " << a << endl; // a is now 10
     return 0;
 }
+
+//____________
