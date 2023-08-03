@@ -6,8 +6,8 @@ operators are of these types:
 1. Arithmetic Operators : +, -, *, /, %, ++, --
 2. Comparison Operators / Relational Operators : ==, !=, >, <, >=, <=
 3. Logical Operators : &&, ||, !
-4. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
-5. Bitwise Operators : &, |, ^, ~, <<, >>
+4. Bitwise Operators : &, |, ^, ~, <<, >>
+5. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
 6. Misc Operators : sizeof(), condition ? X : Y, , .*, ->*, ., ->, (type), new, delete
 
 We also categorise operators into 3 types:
