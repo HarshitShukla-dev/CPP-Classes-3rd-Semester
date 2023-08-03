@@ -205,3 +205,25 @@ int main()
     cout << "a %= b = " << (a %= b) << endl;
     return 0;
 } 
+
+//____________
+
+// 6. Ternary Operator
+
+/*
+Ternary operator is used to replace if-else statement in a single line.
+
+Syntax:
+(condition) ? expression1 : expression2;
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 6, b = 4, c;
+    // Ternary operator
+    c = (a > b) ? a : b; // If a is greater than b, then c = a else c = b
+    cout << "c = " << c << endl;
+    return 0;
+}
