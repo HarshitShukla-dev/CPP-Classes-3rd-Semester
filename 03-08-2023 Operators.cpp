@@ -79,7 +79,7 @@ int main()
 
 /*
 Comparison operators are used to compare two values.
-It returns either true or false according to the condition.
+It returns either true or false according to the condition in the form of 1 or 0 where 1 means true and 0 means false.
 */
 
 #include <iostream>
