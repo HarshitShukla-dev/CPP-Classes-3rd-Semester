@@ -5,8 +5,8 @@ operators are used to perform operations on variables and values.
 operators are of these types:
 1. Arithmetic Operators : +, -, *, /, %, ++, --
 2. Comparison Operators / Relational Operators : ==, !=, >, <, >=, <=
-3. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
-4. Logical Operators : &&, ||, !
+3. Logical Operators : &&, ||, !
+4. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
 5. Bitwise Operators : &, |, ^, ~, <<, >>
 6. Misc Operators : sizeof(), condition ? X : Y, , .*, ->*, ., ->, (type), new, delete
 
@@ -99,5 +99,32 @@ int main()
     cout << "a >= b = " << (a >= b) << endl;
     // Not equal to
     cout << "a != b = " << (a != b) << endl;
+    return 0;
+}
+
+//____________
+
+// 3. Logical Operators
+
+/*
+Logical operators are used to combine conditional statements.
+It returns either true or false according to the condition in the form of 1 or 0 where 1 means true and 0 means false.
+
+&& : Logical AND
+|| : Logical OR
+! : Logical NOT
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 6, b = 4;
+    // Logical AND
+    cout << "(a > b) && (a != b) = " << ((a > b) && (a != b)) << endl;
+    // Logical OR
+    cout << "(a > b) || (a != b) = " << ((a > b) || (a != b)) << endl;
+    // Logical NOT
+    cout << "!(a > b) = " << (!(a > b)) << endl;
     return 0;
 }
