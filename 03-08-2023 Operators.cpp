@@ -160,11 +160,11 @@ int main()
     cout << "a | b = " << (a | b) << endl;
     // Bitwise XOR
     cout << "a ^ b = " << (a ^ b) << endl;
-    // Bitwise NOT
-    cout << "~a = " << (~a) << endl;
     // Bitwise Left Shift
     cout << "a << 2 = " << (a << 2) << endl;
     // Bitwise Right Shift
     cout << "a >> 2 = " << (a >> 2) << endl;
+    // Bitwise NOT
+    cout << "~a = " << (~a) << endl;
     return 0;
 }
