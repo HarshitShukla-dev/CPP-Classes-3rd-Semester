@@ -116,7 +116,7 @@ Logical operators are used to combine conditional statements.
 It returns either true or false according to the condition in the form of 1 or 0 where 1 means true and 0 means false.
 
 && : Logical AND - Returns true if both the conditions are true
-|| : Logical OR - Returns true if any one of the conditions is true 
+|| : Logical OR - Returns true if any one of the conditions is true
 ! : Logical NOT - Returns true if the condition is false and vice versa
 */
 
