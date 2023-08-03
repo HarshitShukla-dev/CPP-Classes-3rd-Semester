@@ -19,6 +19,11 @@ We also categorise operators into 3 types:
 //____________
 
 // 1. Arithmetic Operators
+
+/*
+Arithmetic operators are used to perform arithmetic operations on variables and values.
+*/
+
 #include <iostream>
 using namespace std;
 int main()
