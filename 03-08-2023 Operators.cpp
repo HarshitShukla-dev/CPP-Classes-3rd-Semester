@@ -227,3 +227,32 @@ int main()
     cout << "result = " << result << endl;
     return 0;
 }
+
+//____________
+
+// 7. Misc Operators
+
+/*
+sizeof() : Returns the size of the variable
+& : Returns the address of the variable
+* : Pointer to a variable
+- > : Pointer to a member of a class
+?: : Conditional Expression
+. : Member access operator
+, : Comma operator
+cast() : Conversion operator
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 6;
+    // sizeof() operator
+    cout << "Size of a = " << sizeof(a) << endl;
+    // & operator
+    cout << "Address of a = " << &a << endl;
+    // * operator
+    cout << "Value at address of a = " << *&a << endl;
+    return 0;
+}
