@@ -221,9 +221,9 @@ Syntax:
 using namespace std;
 int main()
 {
-    int a = 6, b = 4, c;
+    int a = 3, b = 4, result;
     // Ternary operator
-    c = (a > b) ? a : b; // If a is greater than b, then c = a else c = b
-    cout << "c = " << c << endl;
+    result = (a > b) ? a : b; // If a is greater than b, then c = a else c = b
+    cout << "result = " << result << endl;
     return 0;
 }
