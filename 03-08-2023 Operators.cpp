@@ -8,7 +8,9 @@ operators are of these types:
 3. Logical Operators : &&, ||, !
 4. Bitwise Operators : &, |, ^, ~, <<, >>
 5. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
-6. Misc Operators : sizeof(), condition ? X : Y, , .*, ->*, ., ->, (type), new, delete
+6. Ternary Operators : condition ? X : Y
+7. Misc Operators : sizeof(), &, *, ?:, ., ->, Cast, Comma
+
 
 We also categorise operators into 3 types:
 1. Unary Operators : ++, --, -, *, &, !, sizeof()
@@ -166,5 +168,40 @@ int main()
     cout << "a >> 1 = " << (a >> 1) << endl;
     // Bitwise NOT
     cout << "~a = " << (~a) << endl;
+    return 0;
+}
+
+//____________
+
+// 5. Assignment Operators
+
+/*
+Assignment operators are used to assign values to variables.
+
+= : Assigns the value of the right side operand to the left side operand
++= : Adds the value of the right side operand to the left side operand and assigns the result to the left side operand
+-= : Subtracts the value of the right side operand from the left side operand and assigns the result to the left side operand
+*= : Multiplies the value of the right side operand with the left side operand and assigns the result to the left side operand
+/= : Divides the value of the left side operand by the right side operand and assigns the result to the left side operand
+%= : Divides the value of the left side operand by the right side operand and assigns the remainder to the left side operand
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 6, b = 4;
+    // Assignment
+    cout << "a = " << a << endl;
+    // Addition assignment
+    cout << "a += b = " << (a += b) << endl;
+    // Subtraction assignment
+    cout << "a -= b = " << (a -= b) << endl;
+    // Multiplication assignment
+    cout << "a *= b = " << (a *= b) << endl;
+    // Division assignment
+    cout << "a /= b = " << (a /= b) << endl;
+    // Modulus assignment
+    cout << "a %= b = " << (a %= b) << endl;
     return 0;
 }
