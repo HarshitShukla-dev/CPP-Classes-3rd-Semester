@@ -133,3 +133,18 @@ int main()
     cout << "!b = " << (!b) << endl;
     return 0;
 }
+
+//____________
+
+// 4. Bitwise Operators
+
+/*
+Bitwise operators are used to perform operations on individual bits. 
+
+& : Bitwise AND - Sets each bit to 1 if both bits are 1 else 0 
+| : Bitwise OR - Sets each bit to 1 if any of the bits is 1 else 0
+^ : Bitwise XOR - Sets each bit to 1 if only one of the bits is 1 else 0
+~ : Bitwise NOT - Inverts all the bits
+<< : Bitwise Left Shift - Shifts the bits of the number to the left and fills 0 on the rightmost bits 
+>> : Bitwise Right Shift - Shifts the bits of the number to the right and fills 0 on the leftmost bits
+*/
