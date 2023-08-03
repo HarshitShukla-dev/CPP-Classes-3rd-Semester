@@ -161,9 +161,9 @@ int main()
     // Bitwise XOR
     cout << "a ^ b = " << (a ^ b) << endl;
     // Bitwise Left Shift
-    cout << "a << 2 = " << (a << 2) << endl;
+    cout << "a << 1 = " << (a << 1) << endl;
     // Bitwise Right Shift
-    cout << "a >> 2 = " << (a >> 2) << endl;
+    cout << "a >> 1 = " << (a >> 1) << endl;
     // Bitwise NOT
     cout << "~a = " << (~a) << endl;
     return 0;
