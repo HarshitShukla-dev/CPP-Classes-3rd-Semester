@@ -1,19 +1,11 @@
+
 #include <iostream>
 using namespace std;
 int main()
 {
-    int a = 6, b = 4;
-    // Assignment
-    cout << "a = " << a << endl;
-    // Addition assignment
-    cout << "a += b = " << (a += b) << endl;
-    // Subtraction assignment
-    cout << "a -= b = " << (a -= b) << endl;
-    // Multiplication assignment
-    cout << "a *= b = " << (a *= b) << endl;
-    // Division assignment
-    cout << "a /= b = " << (a /= b) << endl;
-    // Modulus assignment
-    cout << "a %= b = " << (a %= b) << endl;
+    int a = 3, b = 4, result;
+    // Ternary operator
+    result = (a < b) ? a : b; // If a is greater than b, then c = a else c = b
+    cout << "result = " << result << endl;
     return 0;
 }
