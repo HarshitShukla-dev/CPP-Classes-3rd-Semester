@@ -1,4 +1,19 @@
 // Operators
+/*
+operators are used to perform operations on variables and values.
+operators are of these types:
+1. Arithmetic Operators : +, -, *, /, %, ++, --
+2. Assignment Operators : =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=
+3. Comparison Operators : ==, !=, >, <, >=, <=
+4. Logical Operators : &&, ||, !
+5. Bitwise Operators : &, |, ^, ~, <<, >>
+6. Misc Operators : sizeof(), condition ? X : Y, , .*, ->*, ., ->, (type), new, delete
+
+We also categorise operators into 3 types:
+1. Unary Operators : ++, --, -, *, &, !, sizeof()
+2. Binary Operators : +, -, *, /, %, =, ==, !=, >, <, >=, <=, &&, ||, &, |, ^, ~, <<, >>, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=, []
+3. Ternary Operators : condition ? X : Y
+*/
 
 // 1. Arithmetic Operators
 #include <iostream>
@@ -16,4 +31,33 @@ int main()
     cout << "a / b = " << a / b << endl;
     // Modulus
     cout << "a % b = " << a % b << endl;
+    // Increment
+    cout << "a++ = " << a++ << endl;
+    cout << "Now a = " << a << endl;
+    // Decrement
+    cout << "b-- = " << b-- << endl;
+    cout << "Now b = " << b << endl;
+    return 0;
+}
+
+/*
+Increment and Decrement Operators
+++a or --a is called pre-increment or pre-decrement
+IT
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10;
+    cout << "a++ = " << a++ << endl; // a gets printed first and then gets incremented
+    cout << "Now a = " << a << endl; // a is now 11
+    cout << "++a = " << ++a << endl; // a gets incremented first and then gets printed
+    cout << "Now a = " << a << endl; // a is now 12
+    cout << "a-- = " << a-- << endl; // a gets printed first and then gets decremented
+    cout << "Now a = " << a << endl; // a is now 11
+    cout << "--a = " << --a << endl; // a gets decremented first and then gets printed
+    cout << "Now a = " << a << endl; // a is now 10
+    return 0;
 }
