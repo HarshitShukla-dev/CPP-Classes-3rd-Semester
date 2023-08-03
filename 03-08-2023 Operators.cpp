@@ -130,6 +130,6 @@ int main()
     // Logical OR
     cout << "a||b = " << (a || b) << endl;
     // Logical NOT
-    cout << "!a = " << (!b) << endl;
+    cout << "!b = " << (!b) << endl;
     return 0;
 }
