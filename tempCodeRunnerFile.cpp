@@ -1,16 +1,14 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-    int a = 8, b = 3;
-    // Addition
-    cout << "a + b = " << a + b << endl;
-    // Subtraction
-    cout << "a - b = " << a - b << endl;
-    // Multiplication
-    cout << "a * b = " << a * b << endl;
-    // Division
-    cout << "a / b = " << a / b << endl;
-    // Modulus
-    cout << "a % b = " << a % b << endl;
+int main(){
+    int a = 10;
+    cout << "a++ = " << a++ << endl;
+    cout << "Now a = " << a << endl;
+    cout << "++a = " << ++a << endl;
+    cout << "Now a = " << a << endl;
+    cout << "a-- = " << a-- << endl;
+    cout << "Now a = " << a << endl;
+    cout << "--a = " << --a << endl;
+    cout << "Now a = " << a << endl;
+    return 0;
 }
