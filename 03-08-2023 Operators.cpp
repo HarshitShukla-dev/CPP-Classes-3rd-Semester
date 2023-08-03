@@ -126,9 +126,9 @@ int main()
 {
     int a = 6, b = 4;
     // Logical AND
-    cout << "a&&b = " << (a && b) << endl;
+    cout << "a && b = " << (a && b) << endl;
     // Logical OR
-    cout << "a||b = " << (a || b) << endl;
+    cout << "a || b = " << (a || b) << endl;
     // Logical NOT
     cout << "!b = " << (!b) << endl;
     return 0;
