@@ -41,9 +41,11 @@ int main()
 }
 
 /*
-Increment and Decrement Operators
+Increment and Decrement Operators:
+
 ++a or --a is called pre-increment or pre-decrement
 It first increments or decrements the value of a and then returns the value of a.
+
 a++ or a-- is called post-increment or post-decrement
 It first returns the value of a and then increments or decrements the value of a.
 */
