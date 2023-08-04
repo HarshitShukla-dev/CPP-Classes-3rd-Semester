@@ -6,7 +6,7 @@ cin >> a;
 if (a >= 0)
     cout << " number is positive";
 cout << "0";
-else if (a == 0)
+elseif (a == 0)
 {
     cout << "number is zero";
 }
