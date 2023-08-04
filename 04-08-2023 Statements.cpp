@@ -125,7 +125,7 @@ int main()
 
 //____________________
 
-// user will give you integer. 91 <= marks >= 100 then A, between 81 and 90 then B, between 70 and 80 then C, less than 70 then D
+// Taking input and giving grades using if else ladder : We will take input of marks and print the grade according to the marks.
 
 #include <iostream>
 using namespace std;
@@ -152,3 +152,5 @@ int main()
     }
     return 0;
 }
+
+//____________________
