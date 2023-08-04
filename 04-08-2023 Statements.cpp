@@ -141,7 +141,7 @@ int main()
     {
         cout << "B" << endl;
     }
-    else if (marks >= 71 && marks <= 80)
+    else if (marks >= 70 && marks <= 80)
     {
         cout << "C" << endl;
     }
