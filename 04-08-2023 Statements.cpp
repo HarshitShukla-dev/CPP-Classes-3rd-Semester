@@ -124,3 +124,30 @@ int main()
 }
 
 //____________________
+
+// user will give you integer. 91 <= marks >= 100 then A, between 81 and 90 then B, between 70 and 80 then C, less than 70 then D
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int marks;
+    cin >> marks;
+    if (marks >= 91 && marks <= 100)
+    {
+        cout << "A" << endl;
+    }
+    else if (marks >= 81 && marks <= 90)
+    {
+        cout << "B" << endl;
+    }
+    else if (marks >= 71 && marks <= 80)
+    {
+        cout << "C" << endl;
+    }
+    else
+    {
+        cout << "D" << endl;
+    }
+    return 0;
+}
