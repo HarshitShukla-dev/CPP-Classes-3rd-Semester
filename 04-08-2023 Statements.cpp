@@ -1,13 +1,13 @@
 // Statements
 
 /*
-Conditional Statements
+Conditional Statements : These statements are used to execute a part of code only if a condition is true. There are 4 types of conditional statements in C++.
 1. if
 2. if else
 3. if else ladder
 4. switch
 
-Jump Statements
+Jump Statements : These statements are used to transfer the control of the program to a specific line of code. There are 4 types of jump statements in C++.
 1. break
 2. continue
 3. goto
