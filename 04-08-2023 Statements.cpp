@@ -132,6 +132,7 @@ using namespace std;
 int main()
 {
     int marks;
+    cout << "Enter your marks: ";
     cin >> marks;
     if (marks >= 91 && marks <= 100)
     {
