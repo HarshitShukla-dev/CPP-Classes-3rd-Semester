@@ -41,5 +41,13 @@ int main()
     {
         cout << "You entered a positive integer: " << number << endl; // executes if number is positive
     }
+    if (number < 0) // checks if the number is negative
+    {
+        cout << "You entered a negative integer: " << number << endl; // executes if number is negative
+    }
+    if (number == 0) // checks if the number is equal to 0
+    {
+        cout << "You entered 0." << endl; // executes if number is 0
+    }
     return 0;
 }
