@@ -154,3 +154,41 @@ int main()
 }
 
 //____________________
+
+// switch statement : It is used to execute a block of code among many alternatives. It is a multi-way branch statement. The switch statement is used with break statement. The break statement is used to terminate the switch statement. If the break statement is not used, then all the cases after the matching case are executed. The default case is executed when none of the cases is true.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int Day;
+    cout << "Enter Day Number (1-7): ";
+    cin >> Day;
+    switch (Day)
+    {
+    case 1:
+        cout << "Monday";
+        break;
+    case 2:
+        cout << "Tuesday";
+        break;
+    case 3:
+        cout << "Wednesday";
+        break;
+    case 4:
+        cout << "Thursday";
+        break;
+    case 5:
+        cout << "Friday";
+        break;
+    case 6:
+        cout << "Saturday";
+        break;
+    case 7:
+        cout << "Sunday";
+        break;
+    default:
+        cout << "Invalid Input! Please enter week number between 1-7.";
+    }
+    return 0;
+}
