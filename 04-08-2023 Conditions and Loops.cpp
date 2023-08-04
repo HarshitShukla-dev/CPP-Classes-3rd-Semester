@@ -192,3 +192,47 @@ int main()
     }
     return 0;
 }
+
+//____________________
+
+/*Looping Statements : These statements are used to execute a block of code repeatedly. There are 3 types of looping statements in C++.
+
+1. For loop
+2. While loop
+3. Do while loop
+*/
+
+//____________________
+
+// for loop : It is used to execute a block of code repeatedly until a condition is true. It is also called entry controlled loop as the condition is checked before entering the loop body. The for loop is used when we know the number of iterations in advance.
+
+// Syntax : for (initialization; condition; updation)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    for (int i = 1; i <= 100; i++) //
+    {
+        cout << "I got Placed in Google" << endl;
+    }
+    return 0;
+}
+
+//____________________
+
+// printing table using for loop
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter a positive integer: ";
+    cin >> n;
+    for (int i = 1; i <= 10; ++i)
+    {
+        cout << n << " * " << i << " = " << n * i << endl;
+    }
+    return 0;
+}
