@@ -22,7 +22,7 @@ using namespace std;
 int main()
 {
     int a, b, c;
-    cin >> a >> b >> c;
+    cin >> a >> b >> c; // input 3 integers separated by space
     cout << a << " " << b << " " << c;
     return 0;
 }
