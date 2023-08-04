@@ -28,3 +28,18 @@ int main()
 }
 
 //____________________
+
+// if statement
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+    if (number > 0) // checks if the number is positive
+    {
+        cout << "You entered a positive integer: " << number << endl; // executes if number is positive
+    }
+    return 0;
+}
