@@ -51,3 +51,45 @@ int main()
     }
     return 0;
 }
+
+//____________________
+
+// if else statement
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+    if (number >= 0) // checks if the number is positive
+    {
+        cout << "You entered a positive integer: " << number << endl;
+    }
+    else // executes if number < 0
+    {
+        cout << "You entered a negative integer: " << number << endl;
+    }
+    return 0;
+}
+
+//____________________  
+
+// Taking input and checking odd or even using if else
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+    if (number % 2 == 0) // checks if the number is even
+    {
+        cout << "You entered an even integer: " << number << endl;
+    }
+    else // executes if the number is odd
+    {
+        cout << "You entered an odd integer: " << number << endl;
+    }
+    return 0;
+}
