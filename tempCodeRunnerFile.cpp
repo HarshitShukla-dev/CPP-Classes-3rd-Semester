@@ -1,18 +1,10 @@
 #include <iostream>
 using namespace std;
-int main(){
-int a;
-cin >> a;
-if (a >= 0)
-    cout << " number is positive";
-cout << "0";
-elseif (a == 0)
+int main()
 {
-    cout << "number is zero";
-}
-else
-{
-    cout << "number is negative";
-}
-return 0;
+    for (int i = 1; i <= 100; i++) //
+    {
+        cout << "I got Placed in Google" << endl;
+    }
+    return 0;
 }
