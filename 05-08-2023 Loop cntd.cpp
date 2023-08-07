@@ -161,3 +161,29 @@ int main()
     return 0;
 }
 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows;
+
+    cin >> rows;
+
+    for (int i = 1; i <= rows; ++i) {
+        for (int j = 1; j <= 2 * i - 1; ++j) {
+            cout << (j % 2);
+        }
+
+        cout << std::endl;
+    }
+
+    return 0;
+}
+
+
+replacing digits by square 1234 = 14916
+// sum of ist and last digit 1234= 5
+// finding all prime numbers upto a given no. 8 = 2,3,5,7
+//convert a decimal no. into binary 10=1010
+//convert binary into decimal 1010=10;
+
