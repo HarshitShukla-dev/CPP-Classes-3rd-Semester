@@ -103,3 +103,24 @@ int main()
 
 //_______________
 
+//Nested Loops : A loop inside another loop is called a nested loop. The inner loop is executed fully when outer loop is executed once. For each execution of outer loop, the inner loop is executed completely.
+
+//Patterns using nested loops
+
+//print square using stars
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++) //outer loop
+    {
+        for (int j = 1; j <= n; j++) //inner loop
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
+}
