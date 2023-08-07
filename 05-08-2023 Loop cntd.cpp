@@ -181,7 +181,7 @@ int main() {
 }
 
 
-replacing digits by square 1234 = 14916
+//replacing digits by square 1234 = 14916
 // sum of ist and last digit 1234= 5
 // finding all prime numbers upto a given no. 8 = 2,3,5,7
 //convert a decimal no. into binary 10=1010
