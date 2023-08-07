@@ -5,11 +5,10 @@ int main()
     int number, temp, newNumber = 0;
     cout << "Enter an integer: ";
     cin >> number;
-    while (number != 0)
+    for (int i = number; i != 0; i /= 10)
     {
-        temp = number % 10;
+        temp = i % 10;
         newNumber = newNumber * 100 + temp * temp;
-        number /= 10;
     }
     cout << newNumber << endl;
     return 0;
