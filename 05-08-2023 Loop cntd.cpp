@@ -118,9 +118,10 @@ int main()
     {
         for (int j = 1; j <= n; j++) //inner loop
         {
-            cout << "*";
+            cout << "* ";
         }
         cout << endl;
     }
     return 0;
 }
+
