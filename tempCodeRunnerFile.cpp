@@ -7,7 +7,8 @@ int main()
     cin >> number;
     while (number != 0)
     {
-        if ((number % 10) % 2 == 0)
+        temp = number % 10;
+        if (temp % 2 == 0)
         {
             sumEven += number % 10;
         }
