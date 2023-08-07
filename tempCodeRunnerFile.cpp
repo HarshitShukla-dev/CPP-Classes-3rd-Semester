@@ -2,14 +2,16 @@
 using namespace std;
 int main()
 {
-    int number, temp, newNumber = 0;
-    cout << "Enter an integer: ";
-    cin >> number;
-    for (int i = number; i != 0; i /= 10)
+    int n;
+    cout << "Enter the number of rows: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++) //outer loop
     {
-        temp = i % 10;
-        newNumber = newNumber * 100 + temp * temp;
+        for (int j = 1; j <= n; j++) //inner loop
+        {
+            cout << "*";
+        }
+        cout << endl;
     }
-    cout << newNumber << endl;
     return 0;
 }
