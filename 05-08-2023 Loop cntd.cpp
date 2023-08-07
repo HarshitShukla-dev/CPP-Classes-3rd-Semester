@@ -65,3 +65,38 @@ int main()
     cout << reverse << endl;
     return 0;
 }
+
+//Take a number input. Make a new number by using the squares of every digit. for example if the number input is 1234. output should be 14916
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number, temp, newNumber = 0;
+    cout << "Enter an integer: ";
+    cin >> number;
+    while (number != 0)
+    {
+        temp = number % 10;
+        newNumber = newNumber * 100 + temp * temp;
+        number /= 10;
+    }
+    cout << newNumber << endl;
+    return 0;
+}
+
+// Do above without reversing the number
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number, temp, newNumber = 0;
+    cout << "Enter an integer: ";
+    cin >> number;
+    for (int i = number; i != 0; i /= 10)
+    {
+        temp = i % 10;
+        newNumber = newNumber * 100 + temp * temp;
+    }
+    cout << newNumber << endl;
+    return 0;
+}
