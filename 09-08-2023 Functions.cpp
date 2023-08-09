@@ -40,6 +40,7 @@ int main()
 
 #include <iostream>
 using namespace std;
+
 void B()
 {
     cout << 3;
