@@ -9,6 +9,10 @@ Library functions are the functions which are already defined in C++ libraries l
 User-defined functions are the functions which are created by the user at the time of writing the program. These functions are created to perform some specific tasks. We can create user-defined functions according to our requirements.
 */
 
+//______________
+
+// Calculating nCr using function
+
 #include <iostream>
 using namespace std;
 
@@ -31,3 +35,5 @@ int main()
     cout << "nCr = " << ncr << endl;
     return 0;
 }
+
+//______________
