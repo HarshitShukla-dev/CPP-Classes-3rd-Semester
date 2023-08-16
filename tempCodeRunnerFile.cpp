@@ -22,7 +22,7 @@ int main() {
         cin >> digit;
         inputArray[i] = digit;
         
-        if (digit == 0) {
+        if (digit == 0) 
             countZeros++;
     }
 
