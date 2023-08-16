@@ -74,4 +74,15 @@ int main()
         cin >> digit;
         inputArray[i] = digit;
     }
+
+    int j = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (inputArray[i] == 0)
+        {
+            inputArray[i] = 1;
+            inputArray[j] = 0;
+            j++;
+        }
+    }
 }
