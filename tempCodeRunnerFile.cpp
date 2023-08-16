@@ -1,3 +1,10 @@
+//Double Pointer
+
+/*
+Double pointer refers to a pointer pointing to another pointer.
+It is used to store the address of a pointer as a value.
+*/
+
 #include <iostream>
 using namespace std;
 int main(){
@@ -21,7 +28,9 @@ int main(){
     for(int i=countZero;i<countZero+countOne;i++){
         reArr[i] = 1;
     }
-
+    for(int i=0;i<n;i++){
+        cout << reArr[i] << " ";
+    }
     return 0;
 
 
