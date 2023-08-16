@@ -102,31 +102,35 @@ int main()
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int n;
+    cout << "Enter the number of elements: ";
     cin >> n;
+
     int arr[n];
-    for (int i = 0; i < n; i++){
-        int temp;
-        cin >> temp;
-        arr[i] = temp;
+    cout << "Enter " << n << " integers:" << endl;
+    for (int i = 0; i < n; i++) {
+        int element;
+        cin >> element;
+        arr[i] = element;
     }
-    int dblINT = 0, num = 0;
-    for (int i = 0; i  <n; i++){
-        for (int j=0; j<n;j++){
-            if (arr[i] == arr[j] && i != j){
-                dblINT += 1;
-                num = arr[i];
-                break;
+
+    int duplicateElement = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (arr[i] == arr[j] && i != j) {
+                duplicateElement = arr[i];
+                break; // Found a duplicate, no need to continue inner loop
             }
         }
     }
 
-    if (dblINT == 0){
+    if (duplicateCount == 0) {
         cout << "No duplicate elements found" << endl;
+    } else {
+        cout << "Duplicate element found: " << duplicateElement << endl;
     }
-    else{
-        cout << "Duplicate element found: " << num << endl;
-    }
+
     return 0;
 }
