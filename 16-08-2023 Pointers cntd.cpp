@@ -85,4 +85,14 @@ int main()
             j++;
         }
     }
+
+    // Output the rearranged array
+    cout << "Rearranged array: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << inputArray[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
