@@ -1,3 +1,10 @@
+//Double Pointer
+
+/*
+Double pointer refers to a pointer pointing to another pointer.
+It is used to store the address of a pointer as a value.
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -7,7 +14,7 @@ int main() {
     cin >> n;
 
     int inputArray[n];
-    int countZeros = 0, countOnes = 0;
+    int countZeros = 0;
 
     cout << "Enter " << n << " binary digits (0 or 1) separated by spaces:" << endl;
     for (int i = 0; i < n; i++) {
@@ -17,11 +24,6 @@ int main() {
         
         if (digit == 0) {
             countZeros++;
-        } else if (digit == 1) {
-            countOnes++;
-        } else {
-            // Handle invalid input (if needed)
-        }
     }
 
     int rearrangedArray[n];
@@ -32,7 +34,7 @@ int main() {
     }
 
     // Place ones after zeros
-    for (int i = countZeros; i < countZeros + countOnes; i++) {
+    for (int i = countZeros; i < n; i++) {
         rearrangedArray[i] = 1;
     }
 
@@ -45,3 +47,6 @@ int main() {
 
     return 0;
 }
+
+//___________________
+
