@@ -16,6 +16,7 @@ int main(){
             if (arr[i] == arr[j]){
                 dblINT += 1;
                 num = arr[i];
+                break;
             }
         }
     }
