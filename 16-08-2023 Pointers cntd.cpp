@@ -136,3 +136,42 @@ int main() {
 
     return 0;
 }
+
+//___________________
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter " << n << " integers:" << endl;
+    for (int i = 0; i < n; i++) {
+        int element;
+        cin >> element;
+        arr[i] = element;
+    }
+
+    int uniqueElement = 0;
+
+    for (int i = 0; i < n; i++) {
+        bool isUnique = true; // Assume the current element is unique
+        for (int j = 0; j < n; j++) {
+            if (i != j && arr[i] == arr[j]) {
+                isUnique = false; // Found a duplicate, element is not unique
+                break;
+            }
+        }
+        if (isUnique) {
+            uniqueElement = arr[i];
+            break; // Found a unique element, no need to continue loop
+        }
+    }
+
+    cout << "Unique element: " << uniqueElement << endl;
+
+    return 0;
+}
