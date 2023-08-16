@@ -1,37 +1,47 @@
-//Double Pointer
-
-/*
-Double pointer refers to a pointer pointing to another pointer.
-It is used to store the address of a pointer as a value.
-*/
-
 #include <iostream>
 using namespace std;
-int main(){
-    int n, countZero = 0, countOne = 0;
+
+int main() {
+    int n;
+    cout << "Enter the number of digits: ";
     cin >> n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        int temp;
-        cin >> temp;
-        arr[i] = temp;
-        if (temp == 0) countZero += 1;
-        else if (temp == 1) countOne += 1;
-        else continue;
+
+    int inputArray[n];
+    int countZeros = 0, countOnes = 0;
+
+    cout << "Enter " << n << " binary digits (0 or 1) separated by spaces:" << endl;
+    for (int i = 0; i < n; i++) {
+        int digit;
+        cin >> digit;
+        inputArray[i] = digit;
+        
+        if (digit == 0) {
+            countZeros++;
+        } else if (digit == 1) {
+            countOnes++;
+        } else {
+            // Handle invalid input (if needed)
+        }
     }
 
-    int reArr[n];
+    int rearrangedArray[n];
 
-    for(int i=0;i<countZero;i++){
-        reArr[i] = 0;
+    // Place zeros at the beginning
+    for (int i = 0; i < countZeros; i++) {
+        rearrangedArray[i] = 0;
     }
-    for(int i=countZero;i<countZero+countOne;i++){
-        reArr[i] = 1;
+
+    // Place ones after zeros
+    for (int i = countZeros; i < countZeros + countOnes; i++) {
+        rearrangedArray[i] = 1;
     }
-    for(int i=0;i<n;i++){
-        cout << reArr[i] << " ";
+
+    // Output the rearranged array
+    cout << "Rearranged array: ";
+    for (int i = 0; i < n; i++) {
+        cout << rearrangedArray[i] << " ";
     }
+    cout << endl;
+
     return 0;
-
-
 }
