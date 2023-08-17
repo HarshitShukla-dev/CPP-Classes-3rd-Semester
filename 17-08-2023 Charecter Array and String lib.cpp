@@ -124,3 +124,22 @@ syntax: strlen(string_name)
 2. strcmp() function : This function is used to compare two strings. It compares the first character of two strings. If first string is greater than second string, it returns a positive number. If first string is less than second string, it returns a negative number. If both strings are equal, it returns 0.
 syntax: strcmp(string1, string2)
 */
+
+//take a string as input and print it in reverse order
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main(){
+    char str[100];
+    cout<<"Enter a string: ";
+    cin.getline(str,100);
+    int len=strlen(str);
+    cout<<"Entered string: "<<str<<endl;
+    cout<<"Length of string: "<<len<<endl;
+    cout<<"String in reverse order: ";
+    for(int i=len-1;i>=0;i--){
+        cout<<str[i];
+    }
+    cout<<endl;
+    return 0;
+}
