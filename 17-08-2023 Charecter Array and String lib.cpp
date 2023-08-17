@@ -143,3 +143,9 @@ int main(){
     cout<<endl;
     return 0;
 }
+
+
+
+//checking a palindrome
+// reverse word wise i am coder - coder am i
+//convertin uppercase to lowercase
