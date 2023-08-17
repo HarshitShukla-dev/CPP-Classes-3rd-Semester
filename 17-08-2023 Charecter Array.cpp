@@ -1,4 +1,4 @@
-// Ascii value of null charecter is 0
+// Ascii value of null charecter '\0' is 0
 
 #include <iostream>
 using namespace std;
