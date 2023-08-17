@@ -17,7 +17,7 @@ int main() {
 
     cout << "Enter a string: ";
     cin >> a; // Reading input as a C-style string
-    
+
     cout << "Entered string: " << a << endl;
 
     int length = calculateLength(a); // Call the length calculation function
@@ -26,3 +26,7 @@ int main() {
 
     return 0;
 }
+
+
+// cin reads a string until it encounters a whitespace character (space, newline, tab, etc.).
+// cin.getline reads a string of characters until it encounters a newline character.
