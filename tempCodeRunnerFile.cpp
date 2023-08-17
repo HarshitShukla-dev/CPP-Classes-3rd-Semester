@@ -17,7 +17,7 @@ int main() {
 
     cout << "Enter a string: ";
     cin >> a; // Reading input as a C-style string
-
+    a[9] = '\0'
     cout << "Entered string: " << a << endl;
 
     int length = calculateLength(a); // Call the length calculation function
