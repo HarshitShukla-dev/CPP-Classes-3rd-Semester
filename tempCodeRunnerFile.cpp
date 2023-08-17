@@ -1,5 +1,3 @@
-// Ascii value of null charecter '\0' is 0
-
 #include <iostream>
 using namespace std;
 
@@ -16,8 +14,8 @@ int main() {
     char a[100];
 
     cout << "Enter a string: ";
-    cin >> a; // Reading input as a C-style string
-    a[9] = '\0';
+    cin.getline(a, 100); // Reading input as a C-style string
+
     cout << "Entered string: " << a << endl;
 
     int length = calculateLength(a); // Call the length calculation function
