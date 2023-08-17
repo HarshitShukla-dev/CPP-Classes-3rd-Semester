@@ -6,7 +6,7 @@ int main(){
     cin.getline(a, 100);
     cout<<a<<endl;
 
-    for(int i = 0; a[i] != '\0'; i++){
+    for(int i = 0; i<100; i++){
         if (a[i] == ' ')
         count += 1;
     }
