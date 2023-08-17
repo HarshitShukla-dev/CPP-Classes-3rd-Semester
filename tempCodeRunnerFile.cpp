@@ -1,26 +1,16 @@
 #include <iostream>
 using namespace std;
-
-// Function to calculate the length of a C-style string
-int calculateLength(const char *str) {
-    int count = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        count++;
-    }
-    return count;
-}
-
-int main() {
+int main(){
     char a[100];
+    int count = 0;
+    cin.getline(a, 100);
+    cout<<a<<endl;
 
-    cout << "Enter a string: ";
-    cin.getline(a, 100); // Reading input as a C-style string
+    for(int i = 0; a[i] != '\0'; i++){
+        if (a[i] == ' ')
+        count += 1;
+    }
 
-    cout << "Entered string: " << a << endl;
-
-    int length = calculateLength(a); // Call the length calculation function
-
-    cout << "Length: " << length << endl;
-
+    cout<<"spaces : "<<count<<endl;
     return 0;
 }
