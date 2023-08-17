@@ -4,15 +4,18 @@
 using namespace std;
 
 // Function to calculate the length of a C-style string
-int calculateLength(const char *str) {
+int calculateLength(const char *str)
+{
     int count = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
+    for (int i = 0; str[i] != '\0'; i++)
+    {
         count++;
     }
     return count;
 }
 
-int main() {
+int main()
+{
     char a[100];
 
     cout << "Enter a string: ";
@@ -27,7 +30,6 @@ int main() {
     return 0;
 }
 
-
 // cin reads a string until it encounters a whitespace character (space, newline, tab, etc.).
 // cin.getline reads a string of characters until it encounters a newline character.
 // cin.get reads a string of characters until it encounters a newline character, but extracts the newline character from the input sequence and stores it in c.
@@ -39,15 +41,18 @@ int main() {
 using namespace std;
 
 // Function to calculate the length of a C-style string
-int calculateLength(const char *str) {
+int calculateLength(const char *str)
+{
     int count = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
+    for (int i = 0; str[i] != '\0'; i++)
+    {
         count++;
     }
     return count;
 }
 
-int main() {
+int main()
+{
     char a[100];
 
     cout << "Enter a string: ";
@@ -66,17 +71,45 @@ int main() {
 
 #include <iostream>
 using namespace std;
-int main(){
-    char a[100];
-    int count = 1;
-    cin.getline(a, 100);
-    cout<<a<<endl;
-    
-    for(int i = 0; i<100; i++){
-        if (a[i] == ' ')
-        count += 1;
+
+int calculateLength(const char *str)
+{
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        count++;
+    }
+    return count;
+}
+
+int main()
+{
+    const int maxArraySize = 100; // Maximum size of the array
+    char inputString[maxArraySize];
+    int wordCount = 1; // Initialized to 1 because the first word doesn't need a space
+
+    cout << "Enter a string: ";
+    cin.getline(inputString, maxArraySize); // Allowing spaces in the input
+
+    cout << "Entered string: " << inputString << endl;
+
+    if (calculateLength(inputString) == 0)
+    {
+        cout << "Number of words: 0" << endl;
+        return 0;
+    }
+    else
+    {
+        for (int i = 0; i < maxArraySize; i++)
+        {
+            if (inputString[i] == ' ')
+            {
+                wordCount += 1;
+            }
+        }
     }
 
-    cout<<"words : "<<count<<endl;
+    cout << "Number of words: " << wordCount << endl;
+
     return 0;
 }
