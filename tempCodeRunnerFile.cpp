@@ -8,9 +8,11 @@ int main(){
 
     for(int i = 0; i <100; i++){
         if (a[i] == '\0'){
-            count += 1;
+            
             break;
-    }}
+    }
+    count += 1;
+    }
 
     cout<<"length : "<<count<<endl;
     return 0;
