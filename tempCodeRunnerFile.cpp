@@ -1,31 +1,17 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
 int main(){
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++){
-        int temp;
-        cin >> temp;
-        arr[i] = temp;
-    }
-    int dblINT = 0, num = 0;
-    for (int i = 0; i  <n; i++){
-        for (int j=0; j<n;j++){
-            if (arr[i] == arr[j] && i != j){
-                dblINT += 1;
-                num = arr[i];
-                break;
-            }
-        }
+    char a[100];
+    int count = 0;
+    cin>>a;
+    cout<<a<<endl;
+
+    for(int i = 0; i <100; i++){
+        if (a[i] == '\0'){
+            count += 1;
+            break;
     }
 
-    if (dblINT == 0){
-        cout << "No duplicate elements found" << endl;
-    }
-    else{
-        cout << "Duplicate element found: " << num << endl;
-    }
+    cout<<"length : "<<count<<endl;
     return 0;
 }
