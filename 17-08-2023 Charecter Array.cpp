@@ -113,3 +113,14 @@ int main()
 
     return 0;
 }
+
+
+//______________
+
+/*
+1. strlen() function : This function is used to find the length of the string. It returns the length of string.
+syntax: strlen(string_name)
+
+2. strcmp() function : This function is used to compare two strings. It compares the first character of two strings. If first string is greater than second string, it returns a positive number. If first string is less than second string, it returns a negative number. If both strings are equal, it returns 0.
+syntax: strcmp(string1, string2)
+*/
