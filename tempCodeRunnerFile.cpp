@@ -10,7 +10,7 @@ int main(){
         if (a[i] == '\0'){
             count += 1;
             break;
-    }
+    }}
 
     cout<<"length : "<<count<<endl;
     return 0;
