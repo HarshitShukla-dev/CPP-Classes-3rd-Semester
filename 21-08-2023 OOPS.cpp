@@ -43,3 +43,4 @@ int main()
 // this->age = age;
 
 // Constructor : Constructor is a special member function which has same name as that of class name.
+// Constructor is used to initialize the data members of a class.
