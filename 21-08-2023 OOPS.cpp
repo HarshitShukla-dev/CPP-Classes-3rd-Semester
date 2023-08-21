@@ -13,6 +13,18 @@ class is a group of objects with common state.
 
 #include <iostream>
 using namespace std;
+
+class Student
+{
+public:
+    int rollNumber;
+    int age;
+};
+
 int main()
 {
+    Student s1, s2;
+    s1.rollNumber = 20;
+    s1.age = 24;
+    return 0;
 }
