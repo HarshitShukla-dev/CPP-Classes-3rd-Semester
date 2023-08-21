@@ -32,3 +32,14 @@ int main()
 
     return 0;
 }
+
+// Acess Specifiers : Public, Private, Protected
+// Public : Accessible to all
+// Private : Accessible to class members only
+// Protected : Accessible to class members and derived class members only
+
+// this-> : this is a keyword which is a pointer which points to the current object.
+// this->rollNumber = rollNumber;
+// this->age = age;
+
+// Constructor : Constructor is a special member function which has same name as that of class name.
