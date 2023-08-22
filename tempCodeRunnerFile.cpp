@@ -21,7 +21,7 @@ public:
 
 int main()
 {
-    Student s1, s2, s3;
-
+   // Student s1, s2, s3;
+    Student *s4 = new Student(); // Constructor 1 called
     return 0;
 }
