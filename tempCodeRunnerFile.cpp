@@ -1,35 +1,37 @@
 #include <iostream>
-using namespace std;
-void nextPermutation(int arr[], int n) {
-    int i = n - 2;
-    while (i >= 0 && arr[i] >= arr[i + 1]) {
-        i--;
-    }
-    if (i >= 0) {
-        int j = n - 1;
-        while (j > i && arr[j] <= arr[i]) {
-            j--;
-        }
-        swap(arr[i], arr[j]);
-    }
-    int left = i + 1;
-    int right = n - 1;
-    while (left < right) {
-        swap(arr[left], arr[right]);
-        left++;
-        right--;
-    }
+void mergeArrays(int arr1[], int n, int arr2[], int m, int merged[]) {
+int i = 0, j = 0, k = 0;
+while (i < n && j < m) {
+if (arr1[i] >= arr2[j]) {
+merged[k++] = arr1[i++];
+} else {
+merged[k++] = arr2[j++];
+}
+}
+while (j < m) {
+merged[k++] = arr2[j++];
+}
+while (i < n) {
+merged[k++] = arr1[i++];
+}
 }
 int main() {
-    int n;
-    cin >> n;
-    int arr[100];
-    for (int i = 0; i < n; ++i) {
-        cin >> arr[i];
-    }
-    nextPermutation(arr, n);
-    for (int i = 0; i < n; ++i) {
-        cout << arr[i] << " ";
-    }
-    return 0;
+int n, m;
+std::cin >> n;
+int arr1[100];
+for (int i = 0; i < n; ++i) {
+std::cin >> arr1[i];
+}
+std::cin >> m;
+int arr2[100];
+for (int i = 0; i < m; ++i) {
+std::cin >> arr2[i];
+}
+int mergedArray[200];
+mergeArrays(arr1, n, arr2, m, mergedArray);
+for (int i = 0; i < n + m; ++i) {
+std::cout << mergedArray[i] << " ";
+}
+std::cout << std::endl;
+return 0;
 }
