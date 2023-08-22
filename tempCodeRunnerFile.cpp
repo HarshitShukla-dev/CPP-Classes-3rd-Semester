@@ -8,10 +8,10 @@ merged[k++] = arr1[i++];
 merged[k++] = arr2[j++];
 }
 }
-while (j < m) {
+while (j < n) {
 merged[k++] = arr2[j++];
 }
-while (i < n) {
+while (i < m) {
 merged[k++] = arr1[i++];
 }
 }
