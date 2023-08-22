@@ -1,34 +1,27 @@
-// Object Oriented Programming
-/*
-object is a real world entity which has state and behavior.
-class is a blueprint of an object.
-class is a user defined data type.
-class is a collection of objects.
-class is a logical entity.
-class is a template.
-class is a group of objects with common properties.
-class is a group of objects with common behavior.
-class is a group of objects with common state.
-*/
+// Destructor : It is a special member function of a class which is executed automatically when an object of the class goes out of scope.
 
 #include <iostream>
 using namespace std;
 
 class Student
 {
-public:
     int rollNumber;
-    int age;
+    int marks;
+
+public:
+    Student() // Constructor
+    {
+        cout << "Constructor 1 called" << endl;
+    }
+    ~Student() // Destructor
+    {
+        cout << "Destructor 1 called" << endl;
+    }
 };
 
 int main()
 {
-    Student s1, s2;
-    s1.rollNumber = 20;
-    s1.age = 24;
-
-    cout << s1.rollNumber << endl;
-    cout << s1.age << endl;
+    Student s1, s2, s3;
 
     return 0;
 }
