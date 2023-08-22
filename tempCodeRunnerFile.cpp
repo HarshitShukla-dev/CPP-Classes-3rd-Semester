@@ -1,27 +1,46 @@
-// Destructor : It is a special member function of a class which is executed automatically when an object of the class goes out of scope.
-
 #include <iostream>
-using namespace std;
 
-class Student
-{
-    int rollNumber;
-    int marks;
-
-public:
-    Student() // Constructor
-    {
-        cout << "Constructor 1 called" << endl;
+void nextPermutation(int arr[], int n) {
+    int i = n - 2;
+    while (i >= 0 && arr[i] >= arr[i + 1]) {
+        i--;
     }
-    ~Student() // Destructor
-    {
-        cout << "Destructor 1 called" << endl;
-    }
-};
 
-int main()
-{
-   // Student s1, s2, s3;
-    Student *s4 = new Student(); // Constructor 1 called
+    if (i >= 0) {
+        int j = n - 1;
+        while (j > i && arr[j] <= arr[i]) {
+            j--;
+        }
+
+        std::swap(arr[i], arr[j]);
+    }
+
+    int left = i + 1;
+    int right = n - 1;
+    while (left < right) {
+        std::swap(arr[left], arr[right]);
+        left++;
+        right--;
+    }
+}
+
+int main() {
+    int n;
+    std::cout << "Enter the number of elements: ";
+    std::cin >> n;
+
+    int arr[100];  // Assuming a maximum of 100 elements
+    std::cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+
+    nextPermutation(arr, n);
+
+    std::cout << "Next permutation:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << arr[i] << " ";
+    }
+
     return 0;
 }
