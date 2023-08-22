@@ -44,3 +44,7 @@ int main()
 
 // Constructor : Constructor is a special member function which has same name as that of class name.
 // Constructor is used to initialize the data members of a class.
+// Setter : Setter is a member function which is used to set the data members of a class.
+// Getter : Getter is a member function which is used to get the data members of a class.
+// Default Constructor : Constructor with no parameters.
+// Parameterized Constructor : Constructor with parameters.
