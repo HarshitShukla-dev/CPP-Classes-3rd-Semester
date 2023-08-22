@@ -5,5 +5,23 @@ using namespace std;
 
 class Student
 {
-    
+    int rollNumber;
+    int marks;
+
+public:
+    Student() // Constructor
+    {
+        cout << "Constructor 1 called" << endl;
+    }
+    ~Student() // Destructor
+    {
+        cout << "Destructor 1 called" << endl;
+    }
+};
+
+int main()
+{
+    Student s1, s2, s3;
+
+    return 0;
 }
