@@ -30,22 +30,28 @@ int main()
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n, m; // n = row, m = column
+int main()
+{
+    // n = row, m = column
+    int n, m;
     cin >> n >> m;
 
     int arr[n][m];
 
     // Taking input in 2d Array
-    for(int i=0; i<n; i++) {
-        for(int j=0; j<m; j++) {
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
             cin >> arr[i][j];
         }
     }
 
     // Printing 2d Array
-    for(int i=0; i<n; i++) {
-        for(int j=0; j<m; j++) {
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
             cout << arr[i][j] << " ";
         }
         cout << endl;
