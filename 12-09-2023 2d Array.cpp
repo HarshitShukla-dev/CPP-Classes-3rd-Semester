@@ -90,6 +90,6 @@ int main()
         {
             cout << *(*(arr + i) + j) << " ";
         }
-
-        return 0;
     }
+    return 0;
+}
