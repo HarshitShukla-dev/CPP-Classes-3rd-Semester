@@ -341,21 +341,21 @@ int main()
         }
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = i; j < m; j++)
-        {
-            int temp = arr[i][j];
-            arr[i][j] = arr[j][i];
-            arr[j][i] = temp;
-        }
-    }
+    int transposed[m][n];
 
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            cout << arr[i][j] << " ";
+            transposed[j][i] = arr[i][j];
+        }
+    }
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << transposed[i][j] << " ";
         }
         cout << endl;
     }
