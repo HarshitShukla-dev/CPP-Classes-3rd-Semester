@@ -31,7 +31,7 @@ int main()
 using namespace std;
 
 int main() {
-    int n, m;
+    int n, m; // n = row, m = column
     cin >> n >> m;
 
     int arr[n][m];
