@@ -16,13 +16,13 @@ int main() {
         }
     }
 
-    for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
     {
         int sum = 0;
-        for (int j = 0; j < m; j++)
+        for (int i = 0; i < n; i++)
         {
             sum += arr[i][j];
         }
-        cout << "sum of " << i+1 << " row is : " << sum << endl;
+        cout << "sum of " << j+1 << " column is : " << sum << endl;
     }
 }
