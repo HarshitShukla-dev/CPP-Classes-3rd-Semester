@@ -7,14 +7,22 @@ int main() {
 
     int arr[n][m];
 
-    for (int i = 0; i < n; i++) // Row
+    for (int i = 0; i < n; i++)
     {
         int sum = 0;
         for (int j = 0; j < m; j++)
         {
             cin >> arr[i][j];
+        }
+    }
+
+    for (int j = 0; j < m; j++)
+    {
+        int sum = 0;
+        for (int i = 0; i < n; i++)
+        {
             sum += arr[i][j];
         }
-        cout << "Sum of " << i << " row is " << sum << endl;
+        cout << sum << " ";
     }
 }
