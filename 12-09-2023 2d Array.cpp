@@ -157,6 +157,6 @@ int main() {
         {
             sum += arr[i][j];
         }
-        cout << sum << " ";
+        cout << "sum of " << i << " is : " << sum << endl;
     }
 }
