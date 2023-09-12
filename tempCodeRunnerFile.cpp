@@ -23,6 +23,6 @@ int main() {
         {
             sum += arr[i][j];
         }
-        cout << "sum of " << i << " is : " << sum << endl;
+        cout << "sum of " << i+1 << " row is : " << sum << endl;
     }
 }
