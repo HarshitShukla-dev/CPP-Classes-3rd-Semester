@@ -1,17 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int count(int n)
-{
-    if (n == 0)
-        return 0;
-    return 1 + count(n / 10);
-}
+int main() {
+    int n, m;
+    cin >> n >> m;
 
-int main()
-{
-    int n;
-    cin >> n;
-    cout << count(n);
-    return 0;
+    int arr[n][m];
+
+    for (int i = 0; i < n; i++) // Row
+    {
+        int sum = 0;
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+            sum += arr[i][j];
+        }
+        cout << "Sum of " << i << " row is " << sum << endl;
+    }
 }
