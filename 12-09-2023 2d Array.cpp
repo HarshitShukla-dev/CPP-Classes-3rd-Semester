@@ -91,6 +91,41 @@ int main()
             cout << *(*(arr + i) + j) << " ";
         }
     }
-    
+
+    return 0;
+}
+
+//_________________________
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // n = row, m = column
+    int n, m;
+    cin >> n >> m;
+
+    int arr[n][m];
+
+    // Taking input in 2d Array
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    // Printing 2d Array
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cout << "row : " << i << " column : " << " " << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
