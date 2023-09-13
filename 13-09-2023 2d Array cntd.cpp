@@ -101,3 +101,54 @@ void setZeroes(std::vector<std::vector<int>> &mat)
 }
 
 //______________
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+
+    int arr[n][m];
+
+    // Input the matrix
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    int transposed[m][n];
+
+    // Transpose the matrix
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            transposed[j][i] = arr[i][j];
+        }
+    }
+
+    // Reverse each row
+    for (int i = 0; i < m; i++)
+    {
+        reverse(transposed[i], transposed[i] + n);
+    }
+
+    // Print the transposed and reversed matrix
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << transposed[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
