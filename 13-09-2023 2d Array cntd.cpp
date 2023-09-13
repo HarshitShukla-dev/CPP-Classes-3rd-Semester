@@ -61,36 +61,43 @@ int main()
 
 //______________
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <vector>
+#include <algorithm>
 
-class Solution
+void setZeroes(std::vector<std::vector<int>> &mat)
 {
-public:
-    void setZeroes(vector<vector<int>> &mat)
+    int rows = mat.size(), cols = mat[0].size();
+
+    bool col0 = false;
+    for (int i = 0; i < rows; i++)
     {
-        int col0 = 1, rows = mat.size(), cols = mat[0].size();
-
-        for (int i = 0; i < rows; i++)
+        if (mat[i][0] == 0)
         {
-            if (mat[i][0] == 0)
-                col0 = 0;
-            for (j = 1; j < cols; j++)
-            {
-                if (mat[i][j] == 0)
-                    mat[i][0] = mat[0][j] = 0;
-            }
+            col0 = true;
         }
-
-        for (int i = rows - 1; i >= 0; i--)
+        for (int j = 1; j < cols; j++)
         {
-            for (int j = col - 1; j >= 0; j--)
+            if (mat[i][j] == 0)
             {
-                if (mat[i][0] == 0 || mat[0][j] == 0)
-                    mat[i][j] = 0;
-                if (col0 == 0)
-                    mat[i][0] = 0;
+                mat[i][0] = mat[0][j] = 0;
             }
         }
     }
-};
+
+    for (int i = rows - 1; i >= 0; i--)
+    {
+        for (int j = cols - 1; j >= 0; j--)
+        {
+            if (mat[i][0] == 0 || mat[0][j] == 0)
+            {
+                mat[i][j] = 0;
+            }
+            if (col0)
+            {
+                mat[i][0] = 0;
+            }
+        }
+    }
+}
+
+//______________
