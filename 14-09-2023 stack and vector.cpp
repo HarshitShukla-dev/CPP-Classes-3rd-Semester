@@ -108,7 +108,6 @@ int main()
 {
     int arr[10] = {1, 2, 3, 4, 5, 6, 8, 9, 10};
     stack<int> s;
-    int sum = 0;
     for (int i = 0; i < 10; i++)
     {
         if (arr[i] % 2 == 0)
@@ -116,6 +115,8 @@ int main()
             s.push(arr[i]);
         }
     }
+    
+    int sum = 0;
     while (!s.empty())
     {
         int x = s.top();
