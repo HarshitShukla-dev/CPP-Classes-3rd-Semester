@@ -75,3 +75,14 @@ int main()
     cout << "Maximum Rectangle Area: " << largestRectangleArea(arr) << endl;
     return 0;
 }
+
+
+
+//_____________________
+
+/*
+Stack : It is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). 
+*/
+
+// SYNTAX: stack <data_type> stack_name;
+
