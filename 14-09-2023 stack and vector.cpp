@@ -108,16 +108,18 @@ int main()
 {
     int arr[10] = {1, 2, 3, 4, 5, 6, 8, 9, 10};
     stack<int> s;
+    int n = 0;
     for (int i = 0; i < 10; i++)
     {
         if (arr[i] % 2 == 0)
         {
             s.push(arr[i]);
+            n++;
         }
     }
-    
+
     int sum = 0;
-    while (!s.empty())
+    for (int i = 0; i < n; i++)
     {
         int x = s.top();
         if (x % 4 == 0)
@@ -127,5 +129,35 @@ int main()
         s.pop();
     }
     cout << "Sum: " << sum << endl;
+
+    return 0;
+}
+
+//_____________________
+
+// Anothe example of stack
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main()
+{
+    stack<int> s;
+    s.push(31);
+    s.push(32);
+    s.push(33);
+    s.push(34);
+    int n = 0;
+    s.push(n);
+    s.pop();
+    s.pop();
+
+    while (!s.empty())
+    {
+        cout << s.top() << " "; // printing top most element
+        s.pop();                // removing top most element
+    }
+
     return 0;
 }
