@@ -1,60 +1,29 @@
-#include<iostream>
+#include <iostream>
+#include <stack>
+
 using namespace std;
 
 int main()
 {
-    int n,m;
-    cin>>n>>m;
-    int arr[n][m];
-    int row[n]={0};
-    int col[m]={0};
-    for(int i=0;i<n;i++)
+    int arr[10] = {1, 2, 3, 4, 5, 6, 8, 9, 10};
+    stack<int> s;
+    int sum = 0;
+    for (int i = 0; i < 10; i++)
     {
-        for(int j=0;j<m;j++)
+        if (arr[i] % 2 == 0)
         {
-            cin>>arr[i][j];
-
+            s.push(arr[i]);
         }
     }
-    for(int i=0;i<n;i++)
+    while (!s.empty())
     {
-        for(int j=0;j<m;j++)
+        int x = s.top();
+        if (x % 4 == 0)
         {
-            if(arr[i][j]==0)
-            {
-                row[i]=1;
-                col[j]=1;
-            }
+            sum += x;
         }
+        s.pop();
     }
-    for(int i=0;i<n;i++)
-    {
-        if(row[i]==1)
-        {
-            for(int j=0;j<m;j++)
-            {
-                arr[i][j]=0;
-            }
-        }
-    }
-    for(int i=0;i<m;i++)
-    {
-        if(col[i]==1)
-        {
-            for(int j=0;j<n;j++)
-            {
-                arr[j][i]=0;
-            }
-        }
-    }
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<m;j++)
-        {
-            cout<<arr[i][j]<<" ";
-
-        }
-        cout<<endl;
-    }
+    cout << "Sum: " << sum << endl;
     return 0;
 }
