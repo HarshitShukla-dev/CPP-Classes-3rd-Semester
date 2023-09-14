@@ -89,7 +89,9 @@ Stack : It is a linear data structure which follows a particular order in which 
 /*
 It supports the following standard operations:
 1. push() : Insert element at the top of the stack. Syntax: stack_name.push(value);
-2. pop() : Remove element from the top of the stack. Syntax: stack_name.pop();
+2. pop() : Remove element from the top of the stack.
+It is not possible to remove any element from the bottom of the stack as only the top element can be accessed and removed. 
+Syntax: stack_name.pop();
 3. top() : Access the top element of the stack. Syntax: stack_name.top();
 4. empty() : Check if the stack is empty. Syntax: stack_name.empty();
 5. size() : Return the size of the stack. Syntax: stack_name.size();
