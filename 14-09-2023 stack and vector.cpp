@@ -179,10 +179,14 @@ int main()
     {
         st.push(s[i]);
     }
+
+    string s1;
     while (!st.empty())
     {
-        cout << st.top();
+        s1 += st.top();
         st.pop();
     }
+
+    cout << s1 << endl;
     return 0;
 }
