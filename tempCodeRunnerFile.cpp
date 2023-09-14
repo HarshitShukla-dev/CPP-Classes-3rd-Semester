@@ -5,28 +5,16 @@ using namespace std;
 
 int main()
 {
-    int arr[10] = {1, 2, 3, 4, 5, 6, 8, 9, 10};
-    stack<int> s;
-    int n = 0;
-    for (int i = 0; i < 10; i++)
+    string s = "goodcoder";
+    stack<char> st;
+    for (int i = 0; i < s.length(); i++)
     {
-        if (arr[i] % 2 == 0)
-        {
-            s.push(arr[i]);
-            n++;
-        }
+        st.push(s[i]);
     }
-    
-    int sum = 0;
-    for (int i = 0; i < n; i++)
+    while (!st.empty())
     {
-        int x = s.top();
-        if (x % 4 == 0)
-        {
-            sum += x;
-        }
-        s.pop();
+        cout << st.top();
+        st.pop();
     }
-    cout << "Sum: " << sum << endl;
     return 0;
 }
