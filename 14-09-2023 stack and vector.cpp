@@ -76,12 +76,10 @@ int main()
     return 0;
 }
 
-
-
 //_____________________
 
 /*
-Stack : It is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). 
+Stack : It is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
 */
 
 // SYNTAX: stack <data_type> stack_name;
@@ -90,7 +88,7 @@ Stack : It is a linear data structure which follows a particular order in which 
 It supports the following standard operations:
 1. push() : Insert element at the top of the stack. Syntax: stack_name.push(value);
 2. pop() : Remove element from the top of the stack.
-It is not possible to remove any element from the bottom of the stack as only the top element can be accessed and removed. 
+It is not possible to remove any element from the bottom of the stack as only the top element can be accessed and removed.
 Syntax: stack_name.pop();
 3. top() : Access the top element of the stack. Syntax: stack_name.top();
 4. empty() : Check if the stack is empty. Syntax: stack_name.empty();
@@ -99,7 +97,7 @@ Syntax: stack_name.pop();
 
 //_____________________
 
-// Creating an array which has elements from 1 to 10. Traverse through the array and push the even elements into the stack. Now calculate the sum of those elements which are divisible by 4 present in the stack.
+// Create an array which has elements from 1 to 10. Traverse through the array and push the even elements into the stack. Now calculate the sum of those elements which are divisible by 4 present in the stack.
 
 #include <iostream>
 #include <stack>
