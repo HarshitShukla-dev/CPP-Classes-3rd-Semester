@@ -1,53 +1,56 @@
+
 #include <stdio.h>
-
-void sort(int a[], int b[], int n) {
-    int temp;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (a[j] > a[j + 1]) {
-                // Swap elements in arrays 'a' and 'b'
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-
-                temp = b[j];
-                b[j] = b[j + 1];
-                b[j + 1] = temp;
-            }
-        }
+int main()
+{
+    // Matrix for storing Process Id, Burst
+    // Time, Average Waiting Time & Average
+    // Turn Around Time.
+    int A[100][4];
+    int i, j, n, total = 0, index, temp;
+    float avg_wt, avg_tat;
+    printf("Enter number of process: ");
+    scanf("%d", &n);
+    printf("Enter Burst Time:\n");
+    // User Input Burst Time and alloting Process Id.
+    for (i = 0; i < n; i++) {
+        printf("P%d: ", i + 1);
+        scanf("%d", &A[i][1]);
+        A[i][0] = i + 1;
     }
-}
-
-int main() {
-    int n, m;
-    scanf("%d", &n);  // Read the number of elements in the arrays
-    scanf("%d", &m);  // Assuming you want to read 'm' from user input, though it is not used in this code.
-
-    int a[n], b[n];
-
-    // Input values for array 'a'
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+    // Sorting process according to their Burst Time.
+    for (i = 0; i < n; i++) {
+        index = i;
+        for (j = i + 1; j < n; j++)
+            if (A[j][1] < A[index][1])
+                index = j;
+        temp = A[i][1];
+        A[i][1] = A[index][1];
+        A[index][1] = temp;
+ 
+        temp = A[i][0];
+        A[i][0] = A[index][0];
+        A[index][0] = temp;
     }
-
-    // Input values for array 'b'
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &b[i]);
+    A[0][2] = 0;
+    // Calculation of Waiting Times
+    for (i = 1; i < n; i++) {
+        A[i][2] = 0;
+        for (j = 0; j < i; j++)
+            A[i][2] += A[j][1];
+        total += A[i][2];
     }
-
-    // Sort arrays 'a' and 'b' based on values in 'a'
-    sort(a, b, n);
-
-    // Print sorted arrays 'a' and 'b'
-    for (int i = 0; i < n; i++) {
-        printf("%d ", a[i]);
+    avg_wt = (float)total / n;
+    total = 0;
+    printf("P     BT     WT     TAT\n");
+    // Calculation of Turn Around Time and printing the
+    // data.
+    for (i = 0; i < n; i++) {
+        A[i][3] = A[i][1] + A[i][2];
+        total += A[i][3];
+        printf("P%d     %d     %d      %d\n", A[i][0],
+               A[i][1], A[i][2], A[i][3]);
     }
-
-    printf("\n");
-
-    for (int i = 0; i < n; i++) {
-        printf("%d ", b[i]);
-    }
-
-    return 0;
+    avg_tat = (float)total / n;
+    printf("Average Waiting Time= %f", avg_wt);
+    printf("\nAverage Turnaround Time= %f", avg_tat);
 }
