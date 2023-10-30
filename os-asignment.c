@@ -21,7 +21,7 @@ int main() {
 
     burst_time[9] = 9999;
 
-    printf("\nProcess\tAT\tBT\n");
+    printf("\nP\tAT\tBT\n");
 
     for (time = 0; count != limit; time++) {
         smallest = 9;
