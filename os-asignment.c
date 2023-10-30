@@ -4,91 +4,74 @@ int main() {
     int n, total = 0;
     float avg_wt, avg_tat;
 
-    // Prompt the user to enter the number of processes
     printf("Enter the number of processes: ");
     scanf("%d", &n);
 
-    int processId[n];
-    int burstTime[n];
-    int arrivalTime[n];
-    int waitingTime[n];
-    int turnaroundTime[n];
+    int process[n][5]; // Array to store Process Id, Arrival Time, Burst Time, Waiting Time, and Turnaround Time
 
-    // Input burst times and arrival times
+    // User Input Arrival Time and Burst Time, and alloting Process Id.
     for (int i = 0; i < n; i++) {
-        processId[i] = i + 1;
-        printf("Enter Burst Time for Process P%d: ", processId[i]);
-        scanf("%d", &burstTime[i]);
-
-        // Validate and re-enter arrival time if it's 0
-        do {
-            printf("Enter Arrival Time for Process P%d: ", processId[i]);
-            scanf("%d", &arrivalTime[i]);
-            if (arrivalTime[i] == 0) {
-                printf("Error: Arrival time cannot be 0. Please re-enter.\n");
-            }
-        } while (arrivalTime[i] == 0);
+        process[i][0] = i + 1; // Process Id
+        printf("Enter Arrival Time for P%d: ", i + 1);
+        scanf("%d", &process[i][1]); // Arrival Time
+        printf("Enter Burst Time for P%d: ", i + 1);
+        scanf("%d", &process[i][2]); // Burst Time
+        process[i][3] = 0; // Waiting Time
+        process[i][4] = 0; // Turnaround Time
+        total += process[i][2]; // Calculate the total burst time
     }
 
-    int time = 0; // Current time
-    int remainingTime[n];
+    int currentTime = 0;
 
-    for (int i = 0; i < n; i++) {
-        remainingTime[i] = burstTime[i];
-    }
+    while (currentTime < total) {
+        int shortestBurst = 9999; // Initialize to a large value
+        int shortestIndex = -1;
 
-    while (1) {
-        int minTime = 9999; // A large initial value
-        int shortest = -1;
-
+        // Find the process with the shortest remaining burst time among the arriving processes
         for (int i = 0; i < n; i++) {
-            if (arrivalTime[i] <= time && remainingTime[i] < minTime && remainingTime[i] > 0) {
-                minTime = remainingTime[i];
-                shortest = i;
+            if (process[i][1] <= currentTime && process[i][2] < shortestBurst && process[i][2] > 0) {
+                shortestBurst = process[i][2];
+                shortestIndex = i;
             }
         }
 
-        if (shortest == -1) {
-            // No valid process available to run
-            time += 2; // Delay for queue checking
+        if (shortestIndex == -1) {
+            currentTime++;
         } else {
-            // Execute the shortest job for 1 unit of time
-            remainingTime[shortest]--;
-            time++;
+            // Execute the process with the shortest burst time
+            process[shortestIndex][2]--;
+            currentTime++;
 
-            if (remainingTime[shortest] == 0) {
-                // Process has finished execution
-                turnaroundTime[shortest] = time - arrivalTime[shortest];
-                waitingTime[shortest] = turnaroundTime[shortest] - burstTime[shortest];
+            // Update waiting time for other processes
+            for (int i = 0; i < n; i++) {
+                if (i != shortestIndex && process[i][1] <= currentTime && process[i][2] > 0) {
+                    process[i][3]++;
+                }
             }
-        }
 
-        // Check if all processes have completed
-        int done = 1;
-        for (int i = 0; i < n; i++) {
-            if (remainingTime[i] > 0) {
-                done = 0;
-                break;
+            // Check if the process has completed
+            if (process[shortestIndex][2] == 0) {
+                process[shortestIndex][4] = currentTime - process[shortestIndex][1];
             }
-        }
-
-        if (done == 1) {
-            break;
         }
     }
 
-    printf("Process    Arrival Time    Burst Time    Waiting Time    Turnaround Time\n");
+    // Calculate and print turnaround time for each process
+    printf("P   AT   BT   WT   TAT\n");
     for (int i = 0; i < n; i++) {
-        printf("P%d         %d               %d               %d               %d\n",
-               processId[i], arrivalTime[i], burstTime[i], waitingTime[i], turnaroundTime[i]);
-        avg_wt += waitingTime[i];
-        avg_tat += turnaroundTime[i];
+        printf("P%d   %d   %d   %d   %d\n", process[i][0], process[i][1], process[i][2], process[i][3], process[i][4]);
     }
 
+    // Calculate and print average waiting time and average turnaround time
+    for (int i = 0; i < n; i++) {
+        avg_wt += process[i][3];
+        avg_tat += process[i][4];
+    }
     avg_wt /= n;
     avg_tat /= n;
-    printf("Average Waiting Time = %f\n", avg_wt);
-    printf("Average Turnaround Time = %f\n", avg_tat);
+
+    printf("Average Waiting Time= %f\n", avg_wt);
+    printf("Average Turnaround Time= %f\n", avg_tat);
 
     return 0;
 }
