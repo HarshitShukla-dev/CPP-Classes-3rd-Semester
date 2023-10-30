@@ -2,7 +2,7 @@
 
 int main() {
     int arrival_time[10], burst_time[10], temp[10];
-    int i, smallest, count = 0, time, limit;
+    int i, smallest, count = 0, time = 0, limit;
     double wait_time = 0, turnaround_time = 0, end;
     float average_waiting_time, average_turnaround_time;
 
@@ -19,21 +19,23 @@ int main() {
         temp[i] = burst_time[i];
     }
 
-    burst_time[9] = 9999;
-
     printf("\nP\tAT\tBT\n");
 
-    for (time = 0; count != limit; time++) {
+    while (count < limit) {
         smallest = 9;
         for (i = 0; i < limit; i++) {
             if (arrival_time[i] <= time && burst_time[i] < burst_time[smallest] && burst_time[i] > 0) {
                 smallest = i;
             }
         }
+
+        // Account for 2 time units to check and arrange the process
+        time += 2;
+
         burst_time[smallest]--;
         if (burst_time[smallest] == 0) {
             count++;
-            end = time + 1;
+            end = time;
             wait_time = wait_time + end - arrival_time[smallest] - temp[smallest];
             turnaround_time = turnaround_time + end - arrival_time[smallest];
         }
@@ -48,6 +50,9 @@ int main() {
 
     printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
     printf("Average Turnaround Time: %.2f\n", average_turnaround_time);
+    
+    // Print the total time taken by the processor
+    printf("Total Time Taken: %d\n", time);
 
     return 0;
 }
