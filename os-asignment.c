@@ -49,8 +49,8 @@ int main() {
         printf("P%d\t%d\t%d\t%d\t%d\t%d\n", i + 1, arrival_time[i], temp[i], completion_time, turnaround_time, waiting_time);
     }
 
-    printf("\nAverage Waiting Time: %2f\n", average_waiting_time);
-    printf("Average Turnaround Time: %2f\n", average_turnaround_time);
+    printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
+    printf("Average Turnaround Time: %.2f\n", average_turnaround_time);
 
     return 0;
 }
