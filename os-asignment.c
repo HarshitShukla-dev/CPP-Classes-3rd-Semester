@@ -21,7 +21,7 @@ int main() {
 
     burst_time[9] = 9999;
 
-    printf("\nProcess\tArrival Time\tBurst Time\tCompletion Time\tTurnaround Time\tWaiting Time\n");
+    printf("\nP\tAT\tBT\tCT\tTAT\tWT\n");
 
     for (time = 0; count != limit; time++) {
         smallest = 9;
