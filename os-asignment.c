@@ -21,7 +21,7 @@ int main() {
 
     burst_time[9] = 9999;
 
-    printf("\nP\tAT\tBT\tCT\tTAT\tWT\n");
+    printf("\nProcess\tArrival Time\tBurst Time\n");
 
     for (time = 0; count != limit; time++) {
         smallest = 9;
@@ -43,10 +43,7 @@ int main() {
     average_turnaround_time = turnaround_time / limit;
 
     for (i = 0; i < limit; i++) {
-        int completion_time = arrival_time[i] + temp[i];
-        int turnaround_time = completion_time - arrival_time[i];
-        int waiting_time = turnaround_time - temp[i];
-        printf("P%d\t%d\t%d\t%d\t%d\t%d\n", i + 1, arrival_time[i], temp[i], completion_time, turnaround_time, waiting_time);
+        printf("P%d\t%d\t%d\n", i + 1, arrival_time[i], temp[i]);
     }
 
     printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
