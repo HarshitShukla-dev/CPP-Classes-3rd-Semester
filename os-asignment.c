@@ -1,56 +1,94 @@
-
 #include <stdio.h>
-int main()
-{
-    // Matrix for storing Process Id, Burst
-    // Time, Average Waiting Time & Average
-    // Turn Around Time.
-    int A[100][4];
-    int i, j, n, total = 0, index, temp;
+
+int main() {
+    int n, total = 0;
     float avg_wt, avg_tat;
-    printf("Enter number of process: ");
+
+    // Prompt the user to enter the number of processes
+    printf("Enter the number of processes: ");
     scanf("%d", &n);
-    printf("Enter Burst Time:\n");
-    // User Input Burst Time and alloting Process Id.
-    for (i = 0; i < n; i++) {
-        printf("P%d: ", i + 1);
-        scanf("%d", &A[i][1]);
-        A[i][0] = i + 1;
+
+    int processId[n];
+    int burstTime[n];
+    int arrivalTime[n];
+    int waitingTime[n];
+    int turnaroundTime[n];
+
+    // Input burst times and arrival times
+    for (int i = 0; i < n; i++) {
+        processId[i] = i + 1;
+        printf("Enter Burst Time for Process P%d: ", processId[i]);
+        scanf("%d", &burstTime[i]);
+
+        // Validate and re-enter arrival time if it's 0
+        do {
+            printf("Enter Arrival Time for Process P%d: ", processId[i]);
+            scanf("%d", &arrivalTime[i]);
+            if (arrivalTime[i] == 0) {
+                printf("Error: Arrival time cannot be 0. Please re-enter.\n");
+            }
+        } while (arrivalTime[i] == 0);
     }
-    // Sorting process according to their Burst Time.
-    for (i = 0; i < n; i++) {
-        index = i;
-        for (j = i + 1; j < n; j++)
-            if (A[j][1] < A[index][1])
-                index = j;
-        temp = A[i][1];
-        A[i][1] = A[index][1];
-        A[index][1] = temp;
- 
-        temp = A[i][0];
-        A[i][0] = A[index][0];
-        A[index][0] = temp;
+
+    int time = 0; // Current time
+    int remainingTime[n];
+
+    for (int i = 0; i < n; i++) {
+        remainingTime[i] = burstTime[i];
     }
-    A[0][2] = 0;
-    // Calculation of Waiting Times
-    for (i = 1; i < n; i++) {
-        A[i][2] = 0;
-        for (j = 0; j < i; j++)
-            A[i][2] += A[j][1];
-        total += A[i][2];
+
+    while (1) {
+        int minTime = 9999; // A large initial value
+        int shortest = -1;
+
+        for (int i = 0; i < n; i++) {
+            if (arrivalTime[i] <= time && remainingTime[i] < minTime && remainingTime[i] > 0) {
+                minTime = remainingTime[i];
+                shortest = i;
+            }
+        }
+
+        if (shortest == -1) {
+            // No valid process available to run
+            time += 2; // Delay for queue checking
+        } else {
+            // Execute the shortest job for 1 unit of time
+            remainingTime[shortest]--;
+            time++;
+
+            if (remainingTime[shortest] == 0) {
+                // Process has finished execution
+                turnaroundTime[shortest] = time - arrivalTime[shortest];
+                waitingTime[shortest] = turnaroundTime[shortest] - burstTime[shortest];
+            }
+        }
+
+        // Check if all processes have completed
+        int done = 1;
+        for (int i = 0; i < n; i++) {
+            if (remainingTime[i] > 0) {
+                done = 0;
+                break;
+            }
+        }
+
+        if (done == 1) {
+            break;
+        }
     }
-    avg_wt = (float)total / n;
-    total = 0;
-    printf("P     BT     WT     TAT\n");
-    // Calculation of Turn Around Time and printing the
-    // data.
-    for (i = 0; i < n; i++) {
-        A[i][3] = A[i][1] + A[i][2];
-        total += A[i][3];
-        printf("P%d     %d     %d      %d\n", A[i][0],
-               A[i][1], A[i][2], A[i][3]);
+
+    printf("Process    Arrival Time    Burst Time    Waiting Time    Turnaround Time\n");
+    for (int i = 0; i < n; i++) {
+        printf("P%d         %d               %d               %d               %d\n",
+               processId[i], arrivalTime[i], burstTime[i], waitingTime[i], turnaroundTime[i]);
+        avg_wt += waitingTime[i];
+        avg_tat += turnaroundTime[i];
     }
-    avg_tat = (float)total / n;
-    printf("Average Waiting Time= %f", avg_wt);
-    printf("\nAverage Turnaround Time= %f", avg_tat);
+
+    avg_wt /= n;
+    avg_tat /= n;
+    printf("Average Waiting Time = %f\n", avg_wt);
+    printf("Average Turnaround Time = %f\n", avg_tat);
+
+    return 0;
 }
