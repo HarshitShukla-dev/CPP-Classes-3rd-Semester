@@ -43,7 +43,7 @@ int main() {
         if (burst_time[smallest] == 0) {
             count++;
             time += 2;
-            end = time + 1;
+            end = time;
             wait_time = wait_time + end - arrival_time[smallest] - temp[smallest];
             turnaround_time = turnaround_time + end - arrival_time[smallest];
         }
