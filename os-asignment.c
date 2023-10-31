@@ -2,7 +2,7 @@
 
 int main() {
     int arrival_time[10], burst_time[10], temp[10];
-    int i, smallest, count = 0, time = 0, limit;
+    int i, smallest, count = 0, time, limit;
     double wait_time = 0, turnaround_time = 0, end;
     float average_waiting_time, average_turnaround_time;
 
@@ -12,37 +12,38 @@ int main() {
 
     for (i = 0; i < limit; i++) {
         printf("Process %d:\n", i + 1);
-        printf("Enter Arrival Time: ");
-        scanf("%d", &arrival_time[i]);
 
-        // Check if the arrival time is zero
-        while (arrival_time[i] <= 0) {
-            printf("Arrival Time must be a positive value. Please re-enter: ");
+        do {
+            printf("Enter Arrival Time: ");
             scanf("%d", &arrival_time[i]);
-        }
+
+            if (arrival_time[i] == 0) {
+                printf("Arrival time cannot be zero. Please enter a non-zero arrival time.\n");
+            }
+
+        } while (arrival_time[i] == 0);
 
         printf("Enter Burst Time: ");
         scanf("%d", &burst_time[i]);
         temp[i] = burst_time[i];
     }
 
+    burst_time[9] = 9999;
+
     printf("\nP\tAT\tBT\n");
 
-    while (count < limit) {
+    for (time = 0; count != limit; time++) {
         smallest = 9;
         for (i = 0; i < limit; i++) {
             if (arrival_time[i] <= time && burst_time[i] < burst_time[smallest] && burst_time[i] > 0) {
                 smallest = i;
             }
         }
-
-        // Account for 2 time units to check and arrange the process
-        time += 2;
-
         burst_time[smallest]--;
         if (burst_time[smallest] == 0) {
             count++;
-            end = time;
+            time += 2;
+            end = time + 1;
             wait_time = wait_time + end - arrival_time[smallest] - temp[smallest];
             turnaround_time = turnaround_time + end - arrival_time[smallest];
         }
