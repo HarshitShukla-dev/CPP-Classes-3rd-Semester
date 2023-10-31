@@ -37,7 +37,6 @@ void tatwt(int ct[], int at[], int bt[], int tat[], int wt[], int n) {
 int main() {
     int *p, *at, *bt, *tat, *wt, *ct, pos, i, j, min = 1000, n;
     float awt = 0, atat = 0;
-    int time = 0;
 
     printf("Enter the number of processes: ");
     scanf("%d", &n);
@@ -49,14 +48,25 @@ int main() {
     wt = (int *)malloc(n * sizeof(int));
     tat = (int *)malloc(n * sizeof(int));
 
-    printf("Enter Process No., Arrival Time and Burst Time seperated by commas :\n");
+    printf("Enter Process No., Arrival Time, and Burst Time separated by commas:\n");
+
     for (i = 0; i < n; i++) {
-        scanf("%d %d %d", &p[i], &at[i], &bt[i]);
+        do {
+            printf("For process P%d:\n", i + 1);
+            printf("Arrival Time: ");
+            scanf("%d", &at[i]);
+            if (at[i] == 0) {
+                printf("Arrival time cannot be zero. Please re-enter.\n");
+            }
+        } while (at[i] == 0);
+
+        printf("Burst Time: ");
+        scanf("%d", &bt[i]);
+        p[i] = i + 1; // Assign process number
     }
 
     sortat(p, at, bt, n);
     ct[0] = at[0] + bt[0];
-    time = ct[0];
 
     for (i = 1; i < n; i++) {
         for (j = i; j < n; j++) {
@@ -73,7 +83,6 @@ int main() {
         swap(&bt[i], &bt[pos]);
         min = 1000;
         ct[i] = ct[i - 1] + bt[i];
-        time += 2;
     }
 
     tatwt(ct, at, bt, tat, wt, n);
@@ -94,7 +103,7 @@ int main() {
 
     printf("Average Turnaround Time: %.2f\n", atat);
     printf("Average Waiting Time: %.2f\n", awt);
-    printf("Total time taken by processor: %d\n", ct[n - 1] + (2 * n));
+    printf("Total time taken by the processor: %d\n", ct[n - 1] + (2 * n));
 
     return 0;
 }
