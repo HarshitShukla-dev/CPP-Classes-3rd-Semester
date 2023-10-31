@@ -45,7 +45,7 @@ int main()
     }
     awt=(double)totwt/n;
     ata=(double)totta/n;
-    printf("\nProcessname\tarrivaltime\tbursttime\twaitingtime\tturnaroundtime");
+    printf("\nP\tAT\tBT\tWT\tTAT");
     for(i=0; i<n; i++)
     {
         printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
