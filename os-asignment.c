@@ -30,7 +30,7 @@ int main() {
         }
 
         // Account for 2 time units to check and arrange the process
-        time += 0;
+        time += 2;
 
         burst_time[smallest]--;
         if (burst_time[smallest] == 0) {
