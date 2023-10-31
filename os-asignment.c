@@ -48,19 +48,9 @@ int main() {
     wt = (int *)malloc(n * sizeof(int));
     tat = (int *)malloc(n * sizeof(int));
 
-    printf("Enter the process: ");
+    printf("Enter Process No., Arrival Time and Burst Time seperated by commas :\n");
     for (i = 0; i < n; i++) {
-        scanf("%d", &p[i]);
-    }
-
-    printf("Enter the arrival time: ");
-    for (i = 0; i < n; i++) {
-        scanf("%d", &at[i]);
-    }
-
-    printf("Enter the burst time: ");
-    for (i = 0; i < n; i++) {
-        scanf("%d", &bt[i]);
+        scanf("%d %d %d", &p[i], &at[i], &bt[i]);
     }
 
     sortat(p, at, bt, n);
