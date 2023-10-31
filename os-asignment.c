@@ -45,7 +45,7 @@ int main()
     }
     awt=(double)totwt/n;
     ata=(double)totta/n;
-    printf("\nP\tAT\tBT\tWT\tTAT\n");
+    printf("\nProcess\tAT\tBT\tWT\tTAT\n");
     for(i=0; i<n; i++)
     {
         printf("%s\t%5d\t%5d\t%5d\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
