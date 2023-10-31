@@ -48,6 +48,12 @@ int main() {
 
     printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
     printf("Average Turnaround Time: %.2f\n", average_turnaround_time);
+    printf("Gantt Chart: \n");
+
+    for (i = 0; i < limit; i++) {
+        printf("P%d ", i + 1);
+    }
+
 
     return 0;
 }
