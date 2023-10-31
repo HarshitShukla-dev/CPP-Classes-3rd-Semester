@@ -48,7 +48,7 @@ int main()
     printf("\nP\tAT\tBT\tWT\tTAT");
     for(i=0; i<n; i++)
     {
-        printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
+        printf("\n%s\t%5d\t%5d\t%5d\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
     }
     printf("\nAverage waiting time: %f",awt);
     printf("\nAverage turnaroundtime: %f",ata);
