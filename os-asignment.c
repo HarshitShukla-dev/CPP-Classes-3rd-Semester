@@ -2,7 +2,7 @@
 
 int main() {
     int arrival_time[10], burst_time[10], temp[10];
-    int i, smallest, count = 0, time, limit;
+    int i, smallest, count = 0, time = 0, limit;
     double wait_time = 0, turnaround_time = 0, end;
     float average_waiting_time, average_turnaround_time;
 
@@ -14,27 +14,34 @@ int main() {
         printf("Process %d:\n", i + 1);
         printf("Enter Arrival Time: ");
         scanf("%d", &arrival_time[i]);
-        printf("Enter Burst Time: ");
-        scanf("%d", &burst_time[i]);
-        temp[i] = burst_time[i];
+        if (arrival_time[i] == 0) {
+            printf("Process with Arrival Time 0 is discarded.\n");
+            i--; // Decrement i to re-enter arrival time for the same process.
+            limit--; // Reduce the limit as the process is discarded.
+        } else {
+            printf("Enter Burst Time: ");
+            scanf("%d", &burst_time[i]);
+            temp[i] = burst_time[i];
+        }
     }
-
-    burst_time[9] = 9999;
 
     printf("\nP\tAT\tBT\n");
 
-    for (time = 0; count != limit; time++) {
+    while (count < limit) {
         smallest = 9;
         for (i = 0; i < limit; i++) {
             if (arrival_time[i] <= time && burst_time[i] < burst_time[smallest] && burst_time[i] > 0) {
                 smallest = i;
             }
         }
+
+        // Account for 2 time units to check and arrange the process
+        time += 2;
+
         burst_time[smallest]--;
         if (burst_time[smallest] == 0) {
             count++;
-            time += 2;
-            end = time + 1;
+            end = time;
             wait_time = wait_time + end - arrival_time[smallest] - temp[smallest];
             turnaround_time = turnaround_time + end - arrival_time[smallest];
         }
@@ -50,7 +57,6 @@ int main() {
     printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
     printf("Average Turnaround Time: %.2f\n", average_turnaround_time);
     printf("Total time taken by processor to complete all the jobs: %.2f\n", end);
-
 
     return 0;
 }
