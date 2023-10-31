@@ -33,6 +33,7 @@ int main() {
         burst_time[smallest]--;
         if (burst_time[smallest] == 0) {
             count++;
+            time += 2;
             end = time + 1;
             wait_time = wait_time + end - arrival_time[smallest] - temp[smallest];
             turnaround_time = turnaround_time + end - arrival_time[smallest];
@@ -48,9 +49,6 @@ int main() {
 
     printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
     printf("Average Turnaround Time: %.2f\n", average_turnaround_time);
-    printf("Throughput: %.2f\n", limit / end);
-    printf("CPU Utilization: %.2f\n", (end - wait_time) / end);
-    printf("CPU Efficiency: %.2f\n", (end - wait_time) / (end * limit));
     printf("Total time taken by processor to complete all the jobs: %.2f\n", end);
 
 
