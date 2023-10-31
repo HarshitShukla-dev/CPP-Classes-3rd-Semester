@@ -87,7 +87,7 @@ int main() {
         swap(&at[i], &at[pos]);
         swap(&bt[i], &bt[pos]);
         min = 1000;
-        ct[i] = ct[i - 1] + bt[i]; // Calculate completion time.
+        ct[i] = ct[i - 1] + bt[i] + 2; // Calculate completion time.
     }
 
     // Calculate Turnaround Time (TAT) and Waiting Time (WT) for each process.
