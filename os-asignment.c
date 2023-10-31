@@ -85,7 +85,7 @@ int main() {
 
     tatwt(ct, at, bt, tat, wt, n);
 
-    printf("\nProcess\tArrival Time\tBurst Time\tCompletion Time\tTurnaround Time\tWaiting Time\n");
+    printf("\nP\tAT\tBT\tCT\tTAT\tWT\n");
 
     for (i = 0; i < n; i++) {
         printf("%d\t%d\t%d\t%d\t%d\t%d\n", p[i], at[i], bt[i], ct[i], tat[i], wt[i]);
