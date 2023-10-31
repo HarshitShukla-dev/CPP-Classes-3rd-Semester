@@ -1,5 +1,4 @@
 // SJF scheduling program in c
-#include<stdio.h>
 #include<string.h>
 int main()
 {
@@ -45,10 +44,10 @@ int main()
     }
     awt=(double)totwt/n;
     ata=(double)totta/n;
-    printf("\nP\tAT\tBT\tWT\tTAT");
+    printf("\nProcessname\tarrivaltime\tbursttime\twaitingtime\tturnaroundtime");
     for(i=0; i<n; i++)
     {
-        printf("\n%s\t%5d\t%5d\t%5d\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
+        printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
     }
     printf("\nAverage waiting time: %f",awt);
     printf("\nAverage turnaroundtime: %f",ata);
