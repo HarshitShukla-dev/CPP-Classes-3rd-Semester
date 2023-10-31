@@ -47,7 +47,7 @@ int main() {
     bt = (int *)malloc(n * sizeof(int));
     ct = (int *)malloc(n * sizeof(int));
     wt = (int *)malloc(n * sizeof(int));
-    tat = (int *)malloc(n * sizeof(int);
+    tat = (int *)malloc(n * sizeof(int));
 
     printf("Enter Process No., Arrival Time, and Burst Time separated by commas:\n");
 
