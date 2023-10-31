@@ -45,10 +45,10 @@ int main()
     }
     awt=(double)totwt/n;
     ata=(double)totta/n;
-    printf("\nP\tAT\tBT\tWT\tTAT");
+    printf("\nP\tAT\tBT\tWT\tTAT\n");
     for(i=0; i<n; i++)
     {
-        printf("\n%s\t%5d\t%5d\t%5d\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
+        printf("%s\t%5d\t%5d\t%5d\t%5d",pn[i],at[i],bt[i],wt[i],ta[i]);
     }
     printf("\nAverage waiting time: %f",awt);
     printf("\nAverage turnaroundtime: %f",ata);
