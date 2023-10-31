@@ -106,5 +106,6 @@ int main()
   atat=atat/n;
   awt=awt/n;
   printf("\n avg tat=%.2f and avg wt=%.2f",atat, awt); 
+  printf("Total time taken by processor: %d", ct[n-1] + (2 * n));
   return 0;
 }
