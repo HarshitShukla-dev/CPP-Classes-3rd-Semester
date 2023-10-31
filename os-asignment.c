@@ -12,8 +12,16 @@ int main() {
 
     for (i = 0; i < limit; i++) {
         printf("Process %d:\n", i + 1);
-        printf("Enter Arrival Time: ");
-        scanf("%d", &arrival_time[i]);
+
+        // Check if the arrival time is zero and discard the process
+        do {
+            printf("Enter Arrival Time: ");
+            scanf("%d", &arrival_time[i]);
+            if (arrival_time[i] == 0) {
+                printf("Processes with arrival time zero are discarded. Please enter a non-zero arrival time.\n");
+            }
+        } while (arrival_time[i] == 0);
+
         printf("Enter Burst Time: ");
         scanf("%d", &burst_time[i]);
         temp[i] = burst_time[i];
@@ -50,7 +58,7 @@ int main() {
 
     printf("\nAverage Waiting Time: %.2f\n", average_waiting_time);
     printf("Average Turnaround Time: %.2f\n", average_turnaround_time);
-    
+
     // Print the total time taken by the processor
     printf("Total Time Taken: %d\n", time);
 
