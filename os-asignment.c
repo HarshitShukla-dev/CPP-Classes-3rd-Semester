@@ -37,6 +37,7 @@ void tatwt(int ct[], int at[], int bt[], int tat[], int wt[], int n) {
 int main() {
     int *p, *at, *bt, *tat, *wt, *ct, pos, i, j, min = 1000, n;
     float awt = 0, atat = 0;
+    int time = 0;
 
     printf("Enter the number of processes: ");
     scanf("%d", &n);
@@ -67,8 +68,12 @@ int main() {
 
     sortat(p, at, bt, n);
     ct[0] = at[0] + bt[0];
+    time = ct[0];
 
     for (i = 1; i < n; i++) {
+        while(at[i] > time) {
+            time += 1;
+        }
         for (j = i; j < n; j++) {
             if (at[j] <= ct[i - 1]) {
                 if (bt[j] < min) {
@@ -83,6 +88,7 @@ int main() {
         swap(&bt[i], &bt[pos]);
         min = 1000;
         ct[i] = ct[i - 1] + bt[i];
+        time += 2;
     }
 
     tatwt(ct, at, bt, tat, wt, n);
@@ -103,7 +109,7 @@ int main() {
 
     printf("Average Turnaround Time: %.2f\n", atat);
     printf("Average Waiting Time: %.2f\n", awt);
-    printf("Total time taken by the processor: %d\n", ct[n - 1] + (2 * n));
+    printf("Total time taken by the processor: %d\n", time);
 
     return 0;
 }
