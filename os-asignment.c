@@ -90,7 +90,7 @@ int main() {
         ct[i] = ct[i - 1] + bt[i] + 2; // Calculate completion time.
     }
 
-    // Calculate Turnaround Time (TAT) and Waiting Time (WT) for each process.
+    // Calculate Turnaround Time (TAT) and Waiting Time (WT) for each process.    
     tatwt(ct, at, bt, tat, wt, n);
 
     // Output the process details and results.
