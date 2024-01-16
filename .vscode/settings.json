@@ -3,5 +3,6 @@
         "atomic": "cpp",
         "*.tcc": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "gitdoc.enabled": false
 }
